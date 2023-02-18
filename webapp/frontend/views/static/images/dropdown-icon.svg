@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="filter_1">
+      <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.3764706 0 0 0 0 0.42352942 0 0 0 0 0.21960784 0 0 0 1 0" color-interpolation-filters="sRGB" />
+    </filter>
+    <image width="96" height="96" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABHNCSVQICAgIfAhkiAAAA61JREFUeJzt2j1vW2UchvHryUsjAQKKOhLgC4A6QRykKkMYShYQSkCIVjlNMIsdUXXoAINXxFZ3SSl1IiGK3IEK1FKJBXVIqk4V8AGKmjESAy9SeNGfAWyB5Mcc2+fleZz7N9bH5xzdl0+ipAERERERERERERERERERERERERk3rt+LSa3yoWGvOZg2N3Fxq7nzQVE3FrOkPv++mW3g7BdntFsX75z3HTvpP0mladi7wFHgUbDF4y/MPnXv7t4Xedz0uFitVz7G7BzwMPA48OLx52eP3ru7d6vX8RO+E5nZco9/PJPUKttm1vfJOYzMzCW1yjZmZ3q8+rrvfVPeMzoewnqcCjudbMw74PQwNzquko35bbBTvV5zuEd87/M+ARjv+V+zU6u1uat6Ev7+5K/W5q5ivccHMJz3e4B3QDNzycb85d6PVNdnrebum865Hs/K+DMzl9QrnwJveA9y7krrws66b6O+n2BF8MtifPifAN0LKcJ/ZDU+pAjQvaAiANmODykDdC98yCNkPT4MEKB7A4c0Qru9PHnz9oNPyHB8GDAApI/w8onZt1ZWrv056PlD1G4vT351e++aYa96DxpifBgiAKSL4HCfnzzx5HLsEfIcH4YMAIcjQt7jwwgBYLwjFDE+jBgAxjNCUeNDBgFgvCIUOT5kFADGI0LR40OGASDuCI3GwtQP+wftIseHjANAnBEajYWp+/sH18GWvAflMD7kEADSR3j62MxKo/HNH3ncQ1pljg85BYC0PzG7G88cm3mlrAhljw85BoCwI4QwPuQcAMKMEMr4UEAACCtCSONDQQEgjAihjQ/9/ioiY845a13YWce5K/6jbOn+/sH1RmPB/+cyQ6puVqdDGx8KfAI6yngSqpvV6d+++/YG8JL/ksWPDyUEgGIjhDw+FPgl6N8G+XJU3axOD3ud0MeHkp6AjpT/vfn1kWefW7r0zqXfBzl3DONDyQEgnwixjA8BBIBsI8Q0PgQSALKJENv4EFAAGC1CvX5y5if78UsiGh8CCwDDRfhn/FvAgvcdAY4PAQaAwSLMfP9gItbxIdAAHUl97iMz1vscctPBEYNF3wHOcbnVvPN2DreXiaADpHwS/AL+5HcEHQBGiBDB+BBBABgiQiTjQyQBYIAIEY0PEQWAFBEiGx8iCwB9IkQ4PpT06+hROOdsq7m7xgTngF8d7mecO7vV3F2LbfzorZ2tPFE9v/hY2fchIiIiIiIiIiIiIiIiIiIiIiIiIh1/AXqUO4/DkOuIAAAAAElFTkSuQmCC" id="img_1" />
+  </defs>
+  <g id="Group-2">
+    <g id="Group" transform="translate(5.818182 2.908839)" filter="url(#filter_1)">
+      <g>
+        <use xlink:href="#img_1" fill="#FFFFFF" stroke="none" transform="matrix(0.54545456 0 0 0.54552424 0 8.720834)" />
+      </g>
+      <g>
+        <use xlink:href="#img_1" fill="#FFFFFF" stroke="none" transform="matrix(0.54545456 0 0 0.54552424 0.0053267046 0)" />
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,33 @@
+/* Colors */
+.labeled-frame-with-image-and-button {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 6px 9px;
+  border: none;
+  border-radius: 8px;
+  background-color: #E9E9E9;
+  width: fit-content;
+  height: fit-content; }
+  .labeled-frame-with-image-and-button > img {
+    width: 34px;
+    height: 34px;
+    border-radius: 20px;
+    border: 1px solid #606C38;
+    align-self: center;
+    margin-right: 10px; }
+  .labeled-frame-with-image-and-button span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #283618;
+    height: fit-content;
+    width: fit-content;
+    align-self: center; }
+  .labeled-frame-with-image-and-button .circular-icon-button {
+    margin-left: 10px;
+    align-self: center;
+    width: 24px;
+    height: 24px;
+    background-color: #283618; }
+
+/*# sourceMappingURL=labeled_frame_with_image_and_button.css.map */

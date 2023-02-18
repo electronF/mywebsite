@@ -1,0 +1,143 @@
+/* Colors */
+$primary_color: #606C38;
+$primary_color_dark: #283618;
+$primary_colo_light: #FEFAE0;
+$secondary_color: #DDA15E;
+$secondary_color_dark: #BC6C25;
+$text_color_black: #000;
+$text_color_white: #FFF;
+$text_color_dark: #283618;
+$text_color_light: #F4FCEB;
+$input_color: #E5E5E5;
+
+/* Font */
+$article_editor_font: 12px Inter;
+
+input, textarea, .text-writer, select 
+{
+    background-color: $input_color;
+    border: none;
+}
+
+input:focus, textarea, .text-writer:focus, select:focus
+{
+    outline: none;
+}
+
+.article_editor
+{
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+
+    .tools-bar
+    {
+        background-color: $primary_color;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+        padding: 10px 20px;
+
+        border-radius: 8px 8px 0 0;
+
+        .editable-dropdown-button
+        {
+            height: 100%;
+            // width: 120px;
+        }
+
+
+        .buttons-of-style
+        {
+            display: flex;
+            flex-direction: row;
+
+            .icon-button
+            {
+                width: 28px;
+                height: 28px;
+                margin-right: 3px;
+            }
+        }
+
+        .buttons-of-text-alignment
+        {
+            display: flex;
+            flex-direction: row;
+            
+            .icon-button
+            {
+                width: 28px;
+                height: 28px;
+                margin-right: 3px;
+            }
+        }
+
+        .buttons-of-blocks
+        {
+            display: flex;
+            flex-direction: row;
+            
+            .icon-button
+            {
+                // width: 28px;
+                height: 28px;
+            }
+        }
+
+        .buttons-of-media
+        {
+            display: flex;
+            flex-direction: row;
+            
+            .icon-button
+            {
+                width: 32px;
+                height: 32px;
+                margin-right: 5;
+            }
+        }
+
+        .buttons-of-style .icon-button:last-child, 
+        .buttons-of-text-alignment .icon-button:last-child,
+        .buttons-of-media .icon-button:last-child,
+        .buttons-of-blocks .icon-button:last-child
+        {
+            margin-right: 0;
+        }
+
+        > div
+        {
+            margin: auto 0;
+            margin-right: 18px;
+        }
+
+        div:last-child 
+        {
+            margin-right: 0;
+        }
+    }
+
+    .content
+    {
+        width: 100%;
+        
+        color: $text_color_black;
+        font-size: $article_editor_font;
+
+        .text-writer
+        {
+            min-width: 100%;
+            max-width: 100%;
+            min-height: 400px;
+            border: none;
+            background-color: $input_color;
+
+            padding: 10px 20px;
+        }
+    }
+}

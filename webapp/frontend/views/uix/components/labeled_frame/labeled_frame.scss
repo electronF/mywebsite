@@ -1,0 +1,33 @@
+/* Colors */
+$primary_color: #606C38;
+$primary_color_dark: #283618;
+$primary_color_light: #FEFAE0;
+$secondary_color: #DDA15E;
+$secondary_color_dark: #BC6C25;
+$text_color_black: #000;
+$text_color_white: #FFF;
+$text_color_dark: #283618;
+$text_color_light: #F4FCEB;
+$input_color: #E5E5E5;
+
+
+.labeled-frame
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    padding: 6px 9px;
+    border: none;
+    border-radius: 8px;
+    background-color: #E9E9E9;
+    width: fit-content;
+    height: fit-content;
+
+    span
+    {
+        font-size: 12px;
+        font-weight: 500;
+        color: $primary_color_dark;
+    }
+}

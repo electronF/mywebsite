@@ -1,0 +1,29 @@
+/* Colors */
+$primary_color: #606C38;
+$primary_color_dark: #283618;
+$primary_colo_light: #FEFAE0;
+$secondary_color: #DDA15E;
+$secondary_color_dark: #BC6C25;
+$text_color_black: #000;
+$text_color_white: #FFF;
+$text_color_dark: #283618;
+$text_color_light: #F4FCEB;
+$input_color: #E5E5E5;
+
+/* Font */
+$article_editor_font: 12px Inter;
+
+
+.text-writer 
+{
+    background-color: $input_color;
+    font-size: $article_editor_font;
+    width: 100%;
+    height: 100%;
+    padding: 10px 20px;
+}
+
+.text-color-blue 
+{
+    color: #0044ff;
+}

@@ -1,0 +1,48 @@
+/* Colors */
+.editorial-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2); }
+  .editorial-header .logo a {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    text-decoration: none; }
+    .editorial-header .logo a img {
+      width: 50px;
+      height: 50px;
+      background-color: #D3D3D3;
+      border-radius: 8px;
+      margin-right: 27px;
+      font-size: 12px; }
+    .editorial-header .logo a span {
+      font-size: 24px;
+      font-weight: 600;
+      color: #606C38;
+      padding-top: 5px; }
+  .editorial-header .author {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; }
+    .editorial-header .author span {
+      font-size: 18px;
+      font-weight: 500;
+      color: #283618;
+      margin-right: 33px;
+      padding-top: 10px; }
+    .editorial-header .author button {
+      width: 50px;
+      height: 50px;
+      border: none;
+      border-radius: 25px;
+      background-color: #D3D3D3; }
+      .editorial-header .author button img {
+        width: 100%;
+        border: none;
+        font-size: 10px;
+        border-radius: 25px; }
+
+/*# sourceMappingURL=editorial_header.css.map */

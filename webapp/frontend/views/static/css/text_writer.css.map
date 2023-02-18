@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,YAAY;AAYZ,UAAU;AAIV,YACA;EACI,gBAAgB,EARN,OAAO;EASjB,SAAS,EANS,UAAU;EAO5B,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,SAAS;;AAGtB,gBACA;EACI,KAAK,EAAE,OAAO",
+"sources": ["../../modules/text_writer/text_writer.scss"],
+"names": [],
+"file": "text_writer.css"
+}

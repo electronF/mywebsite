@@ -1,0 +1,217 @@
+/* Colors */
+.bg-primary-color {
+  background-color: #606C38; }
+
+.fg-primary-color {
+  color: #606C38; }
+
+.bg-primary-color-dark {
+  background-color: #283618; }
+
+.fg-primary-color-dark {
+  color: #283618; }
+
+.bg-primary-color-light {
+  background-color: #FEFAE0; }
+
+.fg-primary-color-light {
+  color: #FEFAE0; }
+
+.bg-secondary-color {
+  background-color: #DDA15E; }
+
+.fg-secondary-color {
+  color: #DDA15E; }
+
+.bg-secondary-color-dark {
+  background-color: #BC6C25; }
+
+.fg-secondary-color-dark {
+  color: #BC6C25; }
+
+.margin-left-auto {
+  margin-left: auto; }
+
+.margin-right-auto {
+  margin-right: auto; }
+
+.margin-top-auto {
+  margin-top: auto; }
+
+.margin-bottom-auto {
+  margin-bottom: auto; }
+
+body {
+  margin: 0; }
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.2); }
+
+.rounded-button {
+  border-radius: 8px;
+  padding: 8px 50px;
+  border: none;
+  font-size: 14px;
+  font-weight: 500; }
+
+input, select, textarea {
+  background-color: #E5E5E5;
+  border-radius: 8px;
+  border: none;
+  padding: 10px 20px;
+  font-size: 12pt; }
+
+input:focus, select, textarea:focus {
+  outline: none; }
+
+.editorial-header {
+  padding: 0 26px; }
+
+main {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 26px; }
+  main > section {
+    margin-bottom: 30px; }
+  main .actions-bar {
+    display: flex;
+    flex-direction: row; }
+    main .actions-bar .labeled-icon-button {
+      margin-right: 19px; }
+      main .actions-bar .labeled-icon-button button {
+        width: 44px;
+        height: 44px; }
+    main .actions-bar .labeled-icon-button:last-child {
+      margin-right: 0; }
+  main .article-header {
+    display: flex;
+    flex-direction: column;
+    padding-left: 25px; }
+    main .article-header > div:first-child {
+      margin-bottom: 27px; }
+    main .article-header > div {
+      display: flex;
+      flex-direction: column; }
+      main .article-header > div > div {
+        margin-bottom: 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; }
+        main .article-header > div > div span:first-child {
+          font-size: 18pt;
+          font-weight: 300; }
+        main .article-header > div > div span:last-child {
+          font-size: 12pt;
+          font-weight: 300;
+          height: fit-content;
+          align-self: flex-end; }
+      main .article-header > div textarea {
+        min-height: 90px;
+        max-height: 90px; }
+  main .editor-disposition {
+    display: flex;
+    flex-direction: row; }
+    main .editor-disposition > div:first-child {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      margin-right: auto; }
+      main .editor-disposition > div:first-child span {
+        font-size: 18px;
+        margin-right: 10px;
+        height: fit-content;
+        align-self: center; }
+      main .editor-disposition > div:first-child .toogle-button {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap; }
+        main .editor-disposition > div:first-child .toogle-button button {
+          font-size: 14px;
+          font-weight: 500;
+          border: none;
+          padding: 8px 18px; }
+        main .editor-disposition > div:first-child .toogle-button button:first-child {
+          border-radius: 8px 0 0 8px; }
+        main .editor-disposition > div:first-child .toogle-button button:last-child {
+          border-radius: 0 8px 8px 0; }
+    main .editor-disposition > div:last-child {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap; }
+      main .editor-disposition > div:last-child .icon-button {
+        width: 38px;
+        height: 38px;
+        padding: 5px 6px;
+        padding-bottom: 3.5px; }
+      main .editor-disposition > div:last-child .icon-button:nth-child(5), main .editor-disposition > div:last-child .icon-button:nth-child(6) {
+        padding: 6px 5px;
+        padding-left: 3.5px; }
+      main .editor-disposition > div:last-child .icon-button:hover {
+        background-color: rgba(254, 250, 224, 0.1);
+        border: 2px solid #DDA15E; }
+  main .article-centent-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; }
+    main .article-centent-section > section:first-child {
+      margin-right: 32px; }
+    main .article-centent-section .article-content {
+      display: flex;
+      width: 100%; }
+
+.article-reference {
+  display: flex;
+  flex-direction: column;
+  width: 250px; }
+  .article-reference button {
+    height: 44px;
+    width: 100%; }
+  .article-reference > div {
+    margin-bottom: 30px; }
+    .article-reference > div > span {
+      font-size: 18px;
+      font-weight: 500; }
+    .article-reference > div > div {
+      margin-top: 14px; }
+  .article-reference .authors-manager input {
+    width: 100%;
+    height: 44px; }
+  .article-reference .authors-manager .authors-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 17px; }
+    .article-reference .authors-manager .authors-list > div {
+      margin-bottom: 10px; }
+  .article-reference .categories-manager > div, .article-reference .tags-manager > div {
+    min-height: 80px;
+    padding: 5px;
+    border: 1px solid #808080;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+    .article-reference .categories-manager > div > div, .article-reference .tags-manager > div > div {
+      margin: 2.5px; }
+  .article-reference .datetime-manager {
+    display: flex;
+    flex-direction: column; }
+    .article-reference .datetime-manager > div {
+      display: flex;
+      flex-direction: column; }
+      .article-reference .datetime-manager > div .datetime-frame {
+        display: flex;
+        flex-direction: column; }
+        .article-reference .datetime-manager > div .datetime-frame > span {
+          font-size: 14px;
+          font-weight: 400; }
+        .article-reference .datetime-manager > div .datetime-frame .datime-picker {
+          margin-top: 10.5px;
+          display: flex;
+          flex-direction: row;
+          width: 100%; }
+          .article-reference .datetime-manager > div .datetime-frame .datime-picker input {
+            border-radius: 0; }
+          .article-reference .datetime-manager > div .datetime-frame .datime-picker button {
+            border: none; }
+
+/*# sourceMappingURL=article_writer.css.map */

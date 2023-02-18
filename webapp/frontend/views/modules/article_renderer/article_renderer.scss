@@ -1,0 +1,41 @@
+/* Colors */
+$primary_color: #606C38;
+$primary_color_dark: #283618;
+$primary_colo_light: #FEFAE0;
+$secondary_color: #DDA15E;
+$secondary_color_dark: #BC6C25;
+$text_color_black: #000;
+$text_color_white: #FFF;
+$text_color_dark: #283618;
+$text_color_light: #F4FCEB;
+
+/* Font */
+$article_editor_font: 12px Inter;
+
+
+
+.article_renderer{
+    background-color: $primary_color_dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    width: 100%;
+    height: 100%;
+
+    .alert-box{
+        background-color: transparent;
+    }
+
+    .content{
+        width: 100%;
+        height: 100%;
+        color: $text_color_black;
+        background-color: $primary_color_dark;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: $text_color_dark;
+    }
+
+}

@@ -1,0 +1,27 @@
+/* Colors */
+.labeled-frame-with-image {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 6px 9px;
+  border: none;
+  border-radius: 8px;
+  background-color: #E9E9E9;
+  width: fit-content;
+  height: fit-content; }
+  .labeled-frame-with-image img {
+    width: 34px;
+    height: 34px;
+    border-radius: 20px;
+    border: 1px solid #606C38;
+    font-size: 10px;
+    align-self: center;
+    margin-right: 10px; }
+  .labeled-frame-with-image span {
+    font-size: 14px;
+    font-weight: 500;
+    height: fit-content;
+    align-self: center;
+    color: #283618; }
+
+/*# sourceMappingURL=labeled_frame_with_image.css.map */

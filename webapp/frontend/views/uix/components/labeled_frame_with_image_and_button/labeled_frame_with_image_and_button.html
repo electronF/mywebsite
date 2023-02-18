@@ -1,0 +1,5 @@
+<div class="labeled-frame-with-image-and-button">
+    <img src="{{static_url(image_path)}}" alt="{{alt}}" title="{{title}}"/>
+    <span>{{label}}</span>
+    {% module CircularIconButton(icon_path=icon_path, key=f"labeled-icon-button-{key}", alt=alt, title=title) %}
+</div>

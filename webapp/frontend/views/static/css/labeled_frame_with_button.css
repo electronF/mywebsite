@@ -1,0 +1,25 @@
+/* Colors */
+.labeled-frame-with-button {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 6px 9px;
+  border: none;
+  border-radius: 8px;
+  background-color: #E9E9E9;
+  width: fit-content;
+  height: fit-content; }
+  .labeled-frame-with-button span {
+    font-size: 12px;
+    font-weight: 500;
+    color: #283618;
+    height: fit-content;
+    align-self: center; }
+  .labeled-frame-with-button .circular-icon-button {
+    align-self: center;
+    margin-left: 10px;
+    width: 24px;
+    height: 24px;
+    background-color: #283618; }
+
+/*# sourceMappingURL=labeled_frame_with_button.css.map */

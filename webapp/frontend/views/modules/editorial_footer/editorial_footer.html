@@ -1,0 +1,24 @@
+<footer class="editorial-foorter">
+    <div>
+        <a href="{{root_url}}">{{website_name}}</a>
+        <div>
+            {% for social_media_detail in  social_media_buttons_details%}
+                <a href="{{social_media_detail['link']}}">
+                    <img src="{{static_url(social_media_detail['icon_path'])}}" alt="{{social_media_detail['alt']}}" title="{{social_media_detail['title']}}"/>
+                </a>
+            {% end %}
+        </div>
+    </div>
+    <hr>
+    <div>
+        <div>
+            <span>{{copyright}}</span>
+            <span>{{alert_message}}</span>
+        </div>
+        <div>
+            {% for link_detail in links_details %}
+                <a href="{{link_detail['href']}}">{{link_detail['name']}}</a>
+            {% end %}
+        </div>
+    </div>
+</footer>

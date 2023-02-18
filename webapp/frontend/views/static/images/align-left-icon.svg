@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <image width="96" height="96" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABHNCSVQICAgIfAhkiAAAAS5JREFUeJzt3KFOHFEUx+H/raEa2+zDVOJ4CwSSB+lr0KQVGEKC6ctU7mowPQio7M6wyenOLN9nZ5J7MkeM+eUmAAAAAAAAAJyqMfVCVW2SfEvyNcl5+0TLsEvymORmjPG786A5C7hPctE5xILdjTEuOw+Ys4CnJGedQyzY8xjjc+cBn/Y9rKqR5E/nAB/d3gWMMSrJr/8zyiI9dB+wdwFvrpL8zOuP6aPYJfme5PrYgwAAAAAAAACwXsq4HrPLOmVcr8myThnXa7KsU8YdmTKu12RZp4zroawDAAAAAAAAYL6q2lTVj6ra1npsq+q2qr4c+/v9y2SY9Vetu5Brv/vtUO9ZwJoLufa73w41pwtSyDWatYATKOTa73471KwFvFljIadQAwAAAAAAgKN6ATrkCESDTwGhAAAAAElFTkSuQmCC" id="img_1" />
+  </defs>
+  <use xlink:href="#img_1" fill="#FFFFFF" stroke="none" transform="scale(0.6666667 0.6666667)" />
+</svg>

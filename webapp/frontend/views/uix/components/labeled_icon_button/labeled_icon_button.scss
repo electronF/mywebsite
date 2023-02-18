@@ -1,0 +1,51 @@
+/* Colors */
+$primary_color: #606C38;
+$primary_color_dark: #283618;
+$primary_colo_light: #FEFAE0;
+$secondary_color: #DDA15E;
+$secondary_color_dark: #BC6C25;
+$text_color_black: #000;
+$text_color_white: #FFF;
+$text_color_dark: #283618;
+$text_color_light: #F4FCEB;
+$input_color: #E5E5E5;
+
+
+
+.labeled-icon-button
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: fit-content;
+
+    button 
+    {
+        border: none;
+        background-color: transparent;
+
+        img {
+            width: 100%;
+            background-color: transparent;
+            align-self: center;
+            margin: auto;
+        }
+    }
+
+    span
+    {
+        font-size: 18px;
+        font-weight: 500;
+        color: $primary_color;
+        height: fit-content;
+        align-self: center;
+    }
+}
+
+.labeled-icon-button:hover
+{
+    span
+    {
+        color: $secondary_color;
+    }
+}

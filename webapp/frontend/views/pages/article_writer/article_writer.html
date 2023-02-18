@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{title}}</title>
+        <link href="{{static_url('lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+        <link rel="stylesheet" href="{{static_url('css/article_writer.css')}}">
+        <script src="{{static_url('lib/jquery/jquery-min.js')}}"></script>
+    </head>
+    <body>
+        {% module EditorialHeader(author=current_author)%}
+        <main>
+            <section class="actions-bar">
+                {% for button_description in  toolsbar_button_description %}
+                    {% module LabeledIconButton(
+                        button_description["icon_path"], 
+                        button_description["key"],
+                        button_name = button_description["button_name"],
+                        title = button_description["title"],
+                        alt = button_description["alt"]) 
+                    %}
+                {% end %}
+                <button type="button" class="rounded-button bg-secondary-color fg-primary-color-dark margin-left-auto"> {{ _("Submit") }}</button>
+            </section>
+            <section class="article-header">
+                <div class="article-title">
+                    <div>
+                        <span>{{_("Name")}}</span>
+                        <span class="character-counter" >0/{{title_maxlength}}</span>
+                    </div>
+                    <input type="text" placeholder="{{title_placeholder}}" maxlength={{title_maxlength}} required/>
+                </div>
+                <div class="article-short-description">
+                    <div>
+                        <span>{{_("Short description")}}</span>
+                        <span class="character-counter">0/{{description_maxlength}}</span>
+                    </div>
+                    <textarea placeholder="{{description_placeholder}}" maxlength={{description_maxlength}} required></textarea>
+                </div>
+            </section>
+            <section class="editor-disposition">
+                <div>
+                    <span>{{_('Left paned visibility:')}}</span>
+                    <div class="toogle-button">
+                        <button type="button" class="fg-primary-color-dark bg-secondary-color">{{_('Show')}}</button>
+                        <button type="button" class="fg-primary-color-dark">{{_('Hide')}}</button>
+                    </div>
+                </div>
+                <div>
+                    {% for disposition_button_detail in disposition_button_details %}
+                        {% module IconButton(
+                                icon_path=disposition_button_detail['icon_path'], 
+                                key=f"editor-disposition-{disposition_button_detail['key']}",
+                                title=disposition_button_detail['title'],
+                                alt=disposition_button_detail['alt']
+                            ) 
+                        %}
+                    {% end %}
+                </div>
+            </section>
+            <section class="article-centent-section">
+                <section class="article-reference">
+                    <div>
+                        <button class="rounded-button bg-secondary-color"> {{_('New Article')}} </button>
+                    </div>
+                    <div class="authors-manager">
+                        <span>{{_('Authors')}}</span>
+                        <div>
+                            <div>
+                                <input type="text" list="authors-list"/>
+                                <datalist id="authors-list">
+                                    
+                                    <option value="Pen"><i>Pen</i></option>
+                                    <option value="Pencil">Pencil</option>
+                                    <option value="Paper">Paper</option>
+                                </datalist>
+                            </div>
+                            <div class="authors-list">
+                                {% for author in list_authors %}
+                                    {% module LabeledFrameWithImage(image_path=author.miniature, label=author.surname, key="author-", alt = "delete", title= "Click here to delete this author") %}
+                                {% end %}
+                                {% for author in list_authors %}
+                                    {% module LabeledFrameWithImageAndButton(image_path=author.miniature, label=author.surname, key="author-", alt = "delete", title= "Click here to delete this author") %}
+                                {% end %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="categories-manager">
+                        <span>{{_('Categories')}}</span>
+                        <div>
+                            {% for tag in list_tags %}
+                                {% module LabeledFrame(label=tag, key="tags-") %}
+                            {% end %}
+                        </div>
+                    </div>
+                    <div class="tags-manager">
+                        <span>{{_('Tags')}}</span>
+                        <div>
+                            {% for tag in list_tags %}
+                                {% module LabeledFrameWithButton(label=tag, key="tags-", alt = "delete", title= "Click here to delete this tag") %}
+                            {% end %}
+                        </div>
+                    </div>
+                    <div class="datetime-manager">
+                        <span>{{_('Date Time')}}</span>
+                        <div>
+                            <div class="datetime-frame">
+                                <span>{{_("From")}}</span>
+                                <div class="datime-picker" v>
+                                    <input type="text" />
+                                    <input type="text" />
+                                    <button type="button"></button>
+                                    <button type="button"></button>
+                                </div>
+                            </div>
+                            <div class="datetime-frame">
+                                <span>{{_("To")}}</span>
+                                <div class="datime-picker">
+                                    <input type="text" />
+                                    <input type="text" />
+                                    <button type="button"></button>
+                                    <button type="button"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="article-content">
+                    {% module  ArticleEditor() %}
+                    {% module  ArticleRenderer() %}
+                </section>
+            </section>
+        </main>
+        {% module EditorialFooter() %}
+    </body>
+    <script src="{{static_url('js/article_writer.js')}}"></script>
+
+    <script src="{{static_url('lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+</html>

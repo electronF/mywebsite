@@ -1,0 +1,14 @@
+<header class="editorial-header">
+    <div class="logo"> 
+        <a href="{{root_link}}">
+            <img src="{{static_url(logo_details['logo_path'])}}" alt="{{logo_details['alt']}}" title="{{logo_details['title']}}"/>
+            <span>{{logo_details['website_name']}}</span>
+        </a>
+    </div>
+    <div class="author"> 
+        <span>{{author_details.surname}}</span>
+        <button type="button">
+            <img src="{{static_url(author_details.miniature)}}" alt="{{author_details.surname}}" title="{{_('Click to display menu')}}"/>
+        </button>
+    </div>
+</header>

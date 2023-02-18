@@ -1,0 +1,16 @@
+.circular-icon-button {
+  padding: 5px;
+  border: none;
+  border-radius: 10000px;
+  display: flex; }
+  .circular-icon-button img {
+    width: 100%;
+    background-color: transparent;
+    align-self: center;
+    margin: auto;
+    border-radius: 10000px; }
+
+.circular-icon-button:hover {
+  background-color: rgba(0, 0, 0, 0.2); }
+
+/*# sourceMappingURL=circular_icon_button.css.map */

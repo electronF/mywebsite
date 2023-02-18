@@ -1,0 +1,25 @@
+/* Colors */
+.labeled-icon-button {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: fit-content; }
+  .labeled-icon-button button {
+    border: none;
+    background-color: transparent; }
+    .labeled-icon-button button img {
+      width: 100%;
+      background-color: transparent;
+      align-self: center;
+      margin: auto; }
+  .labeled-icon-button span {
+    font-size: 18px;
+    font-weight: 500;
+    color: #606C38;
+    height: fit-content;
+    align-self: center; }
+
+.labeled-icon-button:hover span {
+  color: #DDA15E; }
+
+/*# sourceMappingURL=labeled_icon_button.css.map */
