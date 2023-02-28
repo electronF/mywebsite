@@ -2,10 +2,6 @@ import os
 import tornado.ioloop
 import tornado.web
 
-from typing import List
-
-import frontend.constants.path as frontend_path
-
 from api.modelsDTO.authors import AuthorDTO
 
 

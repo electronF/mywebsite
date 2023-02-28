@@ -108,21 +108,11 @@
                         <div>
                             <div class="datetime-frame">
                                 <span>{{_("From")}}</span>
-                                <div class="datime-picker" v>
-                                    <input type="text" />
-                                    <input type="text" />
-                                    <button type="button"></button>
-                                    <button type="button"></button>
-                                </div>
+                                {% module DateTimePicker(datetime='', key='datetime-pciker-1') %}
                             </div>
                             <div class="datetime-frame">
                                 <span>{{_("To")}}</span>
-                                <div class="datime-picker">
-                                    <input type="text" />
-                                    <input type="text" />
-                                    <button type="button"></button>
-                                    <button type="button"></button>
-                                </div>
+                                {% module DateTimePicker(datetime='', key='datetime-pciker-2') %}
                             </div>
                         </div>
                     </div>

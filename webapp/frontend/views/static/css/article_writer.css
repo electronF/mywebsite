@@ -198,6 +198,8 @@ main {
     .article-reference .datetime-manager > div {
       display: flex;
       flex-direction: column; }
+      .article-reference .datetime-manager > div .datetime-frame:first-child {
+        margin-bottom: 17px; }
       .article-reference .datetime-manager > div .datetime-frame {
         display: flex;
         flex-direction: column; }
@@ -205,13 +207,6 @@ main {
           font-size: 14px;
           font-weight: 400; }
         .article-reference .datetime-manager > div .datetime-frame .datime-picker {
-          margin-top: 10.5px;
-          display: flex;
-          flex-direction: row;
-          width: 100%; }
-          .article-reference .datetime-manager > div .datetime-frame .datime-picker input {
-            border-radius: 0; }
-          .article-reference .datetime-manager > div .datetime-frame .datime-picker button {
-            border: none; }
+          margin-top: 10.5px; }
 
 /*# sourceMappingURL=article_writer.css.map */

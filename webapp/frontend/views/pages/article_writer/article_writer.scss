@@ -374,6 +374,11 @@ main
             display: flex;
             flex-direction: column;
 
+            .datetime-frame:first-child
+            {
+                margin-bottom: 17px;
+            }
+
             .datetime-frame
             {
                 display: flex;
@@ -388,21 +393,6 @@ main
                 .datime-picker
                 {
                     margin-top: 10.5px;
-                    display: flex;
-                    flex-direction: row;
-                    width: 100%;
-
-                    input
-                    {
-                        // flex-grow: 1;
-                        border-radius: 0;
-                    }
-
-                    button
-                    {
-                        border: none;
-                        // background-color: transparent;
-                    }
                 }
             }
         }

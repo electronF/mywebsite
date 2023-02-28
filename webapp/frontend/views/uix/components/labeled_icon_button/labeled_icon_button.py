@@ -1,14 +1,16 @@
 import os
-import random
 import tornado.web
 
-from typing import List
+from typing import Iterable, List, Optional
 
 
 class LabeledIconButton(tornado.web.UIModule):
     
     def css_files(self):
         return [os.path.join("css", "labeled_icon_button.css")]
+    
+    def javascript_files(self) -> Optional[Iterable[str]]:
+        return [os.path.join("js", "labeled_icon_button.js")]
 
     def render(self, icons_paths:List[str], key:str, alt:str = "", button_name:str = "", title:str=""):
         icons_paths.append('')

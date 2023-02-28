@@ -1,0 +1,44 @@
+<div>
+    <div class="datime-picker">  
+        <input type="text" placeholder="dd/mm/yyy" value="{{date}}" class="date-field"/>
+        <input type="text" placeholder="hh:mm" value={{time}} class="time-field"/>
+        <button type="button" class="date-picker-button">
+            <img src="{{static_url(date_icon_path)}}" alt="date" title="Click here to set the date"/>
+        </button>
+        <button type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="{{static_url(time_icon_path)}}" alt="time" title="Click here to set the time"/>
+        </button>
+    </div>
+
+    <div class="datetime-picker-displayer">
+        <input type="date" class="date-picker">
+        <div class="dropdown-menu">
+            <div class="time-picker">
+                <div class="hour-picker">
+                    <span>{{_('hour')}}</span>
+                    <ul>
+                        {% for hour in range(24) %}
+                            {% if (hour <10 ) %}
+                                <li><a> {{ f"0{hour}" }} </a></li>
+                            {% else %}
+                                <li><a> {{ hour }} </a></li>
+                            {% end%}
+                        {% end %}
+                    </ul>
+                </div>
+                <div class="minute-picker">
+                    <span>{{_('minute')}}</span>
+                    <ul>
+                        {% for hour in range(60) %}
+                            {% if (hour <10 ) %}
+                                <li><a> {{ f"0{hour}" }} </a></li>
+                            {% else %}
+                                <li><a> {{ hour }} </a></li>
+                            {% end%}
+                        {% end %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

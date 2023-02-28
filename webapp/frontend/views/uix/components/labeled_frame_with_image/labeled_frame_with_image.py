@@ -1,8 +1,5 @@
 import os
-import random
 import tornado.web
-
-from typing import List
 
 
 class LabeledFrameWithImage(tornado.web.UIModule):

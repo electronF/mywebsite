@@ -20,7 +20,7 @@ class EditorialFooter(tornado.web.UIModule):
             "editorial_footer.html", 
             root_url = "#",
             copyright = "Copyright © 2023 Blog name . All right reserved",
-            website_name = "Blog name",
+            website_name = "LaFabriqX",
             alert_message = "This site is governed by express terms of use. By using this site, \
 you signify your agreement to be bound by these Universal Terms of Use." ,
             social_media_buttons_details = [
