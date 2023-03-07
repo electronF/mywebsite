@@ -1,7 +1,7 @@
 import os
 import tornado.web
 
-import frontend.constants.path as frontend_path
+import frontend.constants.python.path as frontend_path
 
 
 class TextWriter(tornado.web.UIModule):

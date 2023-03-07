@@ -12,7 +12,7 @@ class LabeledIconButton(tornado.web.UIModule):
     def javascript_files(self) -> Optional[Iterable[str]]:
         return [os.path.join("js", "labeled_icon_button.js")]
 
-    def render(self, icons_paths:List[str], key:str, alt:str = "", button_name:str = "", title:str=""):
+    def render(self, icons_paths:List[str], key:str, on_click:str="", alt:str = "", button_name:str = "", title:str=""):
         icons_paths.append('')
         icons_paths.append('')
 
@@ -20,7 +20,9 @@ class LabeledIconButton(tornado.web.UIModule):
             "labeled_icon_button.html",
             key=key, 
             icon_path1=icons_paths[0],
-            icon_path2=icons_paths[2], 
+            icon_path2=icons_paths[1], 
             alt=alt,
             title = title,
-            button_name=button_name)
+            button_name=button_name,
+            on_click = on_click
+            )

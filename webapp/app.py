@@ -9,7 +9,7 @@ from frontend.views.pages import IndexHandler
 from frontend.views.pages import ArticleWriterHandler
 from frontend.views.pages import EditorialHomeHandler
 
-import frontend.constants.path as frontend_path
+import frontend.constants.python.path as frontend_path
 import settings
 
 

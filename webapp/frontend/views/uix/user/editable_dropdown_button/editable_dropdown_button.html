@@ -5,13 +5,14 @@
             <img src="{{static_url(icon_path)}}" alt="{{alt}}" title={{title}}>
         </button>
     </div>
-    <div class="btn-group">
-        <button type="button" class="bootstrap-btn" style="width: 0; height: 0;" data-bs-toggle="dropdown" aria-expanded="false">
-        </button>
-        <ul class="dropdown-menu list-item">
-            {% for item in items %}
-                <li><a class="dropdown-item" href="#">{{ item }} </a></li>
-            {% end %}
-        </ul>
+    <div class="dropdown-menu list-item">
+        {% for item in items %}
+            <div class="dropdown-item">
+                <div>
+                    <img src="" alt="" />
+                    <span>{{ item }}</span> 
+                </div>
+            </div>
+        {% end %}
     </div>
 </div>

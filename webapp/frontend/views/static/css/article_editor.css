@@ -7,63 +7,83 @@ input, textarea, .text-writer, select {
 input:focus, textarea, .text-writer:focus, select:focus {
   outline: none; }
 
-.article_editor {
+.article-editor {
   background-color: transparent;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   height: 100%;
   width: 100%; }
-  .article_editor .tools-bar {
+  .article-editor .tools-bar {
     background-color: #606C38;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     padding: 10px 20px;
     border-radius: 8px 8px 0 0; }
-    .article_editor .tools-bar .editable-dropdown-button {
+    .article-editor .tools-bar .separator {
+      align-self: center;
+      border-left: 1px solid rgba(255, 255, 255, 0.3);
+      height: 20px;
+      line-height: normal;
+      list-style: none;
+      margin: 0 0;
+      outline: none;
+      overflow: hidden;
+      padding: 0;
+      text-decoration: none;
+      vertical-align: middle;
+      width: 0; }
+    .article-editor .tools-bar .editable-dropdown-button {
       height: 100%; }
-    .article_editor .tools-bar .buttons-of-style {
+    .article-editor .tools-bar .icon-button:hover {
+      border-radius: 4px;
+      padding: 5px; }
+    .article-editor .tools-bar .buttons-of-style {
       display: flex;
-      flex-direction: row; }
-      .article_editor .tools-bar .buttons-of-style .icon-button {
+      flex-direction: row;
+      margin: auto 5px; }
+      .article-editor .tools-bar .buttons-of-style .icon-button {
         width: 28px;
         height: 28px;
         margin-right: 3px; }
-    .article_editor .tools-bar .buttons-of-text-alignment {
+    .article-editor .tools-bar .buttons-of-text-alignment {
       display: flex;
-      flex-direction: row; }
-      .article_editor .tools-bar .buttons-of-text-alignment .icon-button {
+      flex-direction: row;
+      margin: auto 5px; }
+      .article-editor .tools-bar .buttons-of-text-alignment .icon-button {
         width: 28px;
         height: 28px;
         margin-right: 3px; }
-    .article_editor .tools-bar .buttons-of-blocks {
+    .article-editor .tools-bar .buttons-of-blocks {
       display: flex;
-      flex-direction: row; }
-      .article_editor .tools-bar .buttons-of-blocks .icon-button {
+      flex-direction: row;
+      margin: auto 5px;
+      box-sizing: border-box; }
+      .article-editor .tools-bar .buttons-of-blocks .icon-button {
         height: 28px; }
-    .article_editor .tools-bar .buttons-of-media {
+    .article-editor .tools-bar .buttons-of-media {
       display: flex;
-      flex-direction: row; }
-      .article_editor .tools-bar .buttons-of-media .icon-button {
+      flex-direction: row;
+      margin: auto 5px; }
+      .article-editor .tools-bar .buttons-of-media .icon-button {
         width: 32px;
-        height: 32px;
-        margin-right: 5; }
-    .article_editor .tools-bar .buttons-of-style .icon-button:last-child,
-    .article_editor .tools-bar .buttons-of-text-alignment .icon-button:last-child,
-    .article_editor .tools-bar .buttons-of-media .icon-button:last-child,
-    .article_editor .tools-bar .buttons-of-blocks .icon-button:last-child {
+        height: 32px; }
+    .article-editor .tools-bar .buttons-of-style .icon-button:last-child,
+    .article-editor .tools-bar .buttons-of-text-alignment .icon-button:last-child,
+    .article-editor .tools-bar .buttons-of-media .icon-button:last-child,
+    .article-editor .tools-bar .buttons-of-blocks .icon-button:last-child {
       margin-right: 0; }
-    .article_editor .tools-bar > div {
+    .article-editor .tools-bar > div {
       margin: auto 0;
-      margin-right: 18px; }
-    .article_editor .tools-bar div:last-child {
+      margin-right: 10px; }
+    .article-editor .tools-bar div:last-child {
       margin-right: 0; }
-  .article_editor .content {
+  .article-editor .content {
     width: 100%;
     color: #000;
     font-size: 12px Inter; }
-    .article_editor .content .text-writer {
+    .article-editor .content .text-writer {
       min-width: 100%;
       max-width: 100%;
       min-height: 400px;

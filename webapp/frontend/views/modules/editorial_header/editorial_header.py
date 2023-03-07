@@ -1,7 +1,7 @@
 import os
 import tornado.web
 
-import frontend.constants.path as frontend_path
+import frontend.constants.python.path as frontend_path
 
 from api.modelsDTO.authors import AuthorDTO
 
@@ -22,7 +22,7 @@ class EditorialHeader(tornado.web.UIModule):
             "editorial_header.html", 
             root_link = "#",
             logo_details = {
-                "logo_path": "", #os.path.join("images", "bold-icon.webp")
+                "logo_path": os.path.join("images", "color-full-inline-lafabriqx-logo.webp"),
                 "alt": "blog name",
                 'title': 'blog name',
                 "website_name": "Blog name"

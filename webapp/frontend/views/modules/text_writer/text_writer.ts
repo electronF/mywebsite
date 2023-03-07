@@ -31,8 +31,8 @@ class TextWriterResizer extends TextWriter
             if(this._canResize == false)
             {
                 var mouse = event.originalEvent
-                var x = mouse.pageX - event.currentTarget.offsetLeft
-                var y = mouse.pageY - event.currentTarget.offsetTop
+                var x = mouse!.pageX - event.currentTarget.offsetLeft
+                var y = mouse!.pageY - event.currentTarget.offsetTop
                 
                 //expand
                 if(
@@ -102,24 +102,24 @@ class TextWriterResizer extends TextWriter
                 if (this._rezisingDirection == this._validResizingDirections.southEst)
                 {
                     $(this._selector).css(
-                        "width", (mouse.pageX - $(this._selector).offset().left)+"px"
+                        "width", (mouse!.pageX - $(this._selector).offset()!.left)+"px"
                     )
                     $(this._selector).css(
                         "height", 
-                        (mouse.pageY - $(this._selector).offset().top)+"px"
+                        (mouse!.pageY - $(this._selector).offset()!.top)+"px"
                     )
                 }
                 else if(this._rezisingDirection == this._validResizingDirections.est)
                 {
                     $(this._selector).css(
-                        "width", (mouse.pageX - $(this._selector).offset().left)+"px"
+                        "width", (mouse!.pageX - $(this._selector).offset()!.left)+"px"
                     ) 
                 }
                 else if(this._rezisingDirection == this._validResizingDirections.south)
                 {
                     $(this._selector).css(
                         "height", 
-                        (mouse.pageY - $(this._selector).offset().top)+"px"
+                        (mouse!.pageY - $(this._selector).offset()!.top)+"px"
                     )
                 }
             }

@@ -142,71 +142,32 @@ main {
         width: 38px;
         height: 38px;
         padding: 5px 6px;
-        padding-bottom: 3.5px; }
+        padding-bottom: 3.5px;
+        margin-right: 2px; }
       main .editor-disposition > div:last-child .icon-button:nth-child(5), main .editor-disposition > div:last-child .icon-button:nth-child(6) {
         padding: 6px 5px;
         padding-left: 3.5px; }
+      main .editor-disposition > div:last-child .icon-button:last-child {
+        margin-right: 0; }
       main .editor-disposition > div:last-child .icon-button:hover {
         background-color: rgba(254, 250, 224, 0.1);
         border: 2px solid #DDA15E; }
-  main .article-centent-section {
+  main .article-content-section {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap; }
-    main .article-centent-section > section:first-child {
+    main .article-content-section .article-reference {
       margin-right: 32px; }
-    main .article-centent-section .article-content {
+    main .article-content-section .article-content {
       display: flex;
       width: 100%; }
 
-.article-reference {
-  display: flex;
-  flex-direction: column;
-  width: 250px; }
-  .article-reference button {
-    height: 44px;
-    width: 100%; }
-  .article-reference > div {
-    margin-bottom: 30px; }
-    .article-reference > div > span {
-      font-size: 18px;
-      font-weight: 500; }
-    .article-reference > div > div {
-      margin-top: 14px; }
-  .article-reference .authors-manager input {
-    width: 100%;
-    height: 44px; }
-  .article-reference .authors-manager .authors-list {
-    display: flex;
-    flex-direction: column;
-    margin-top: 17px; }
-    .article-reference .authors-manager .authors-list > div {
-      margin-bottom: 10px; }
-  .article-reference .categories-manager > div, .article-reference .tags-manager > div {
-    min-height: 80px;
-    padding: 5px;
-    border: 1px solid #808080;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap; }
-    .article-reference .categories-manager > div > div, .article-reference .tags-manager > div > div {
-      margin: 2.5px; }
-  .article-reference .datetime-manager {
-    display: flex;
-    flex-direction: column; }
-    .article-reference .datetime-manager > div {
-      display: flex;
-      flex-direction: column; }
-      .article-reference .datetime-manager > div .datetime-frame:first-child {
-        margin-bottom: 17px; }
-      .article-reference .datetime-manager > div .datetime-frame {
-        display: flex;
-        flex-direction: column; }
-        .article-reference .datetime-manager > div .datetime-frame > span {
-          font-size: 14px;
-          font-weight: 400; }
-        .article-reference .datetime-manager > div .datetime-frame .datime-picker {
-          margin-top: 10.5px; }
+.active-disposition-icon-button {
+  background-color: rgba(254, 250, 224, 0.1) !important;
+  border: 2px solid #DDA15E !important; }
+
+.unactive-disposition-icon-button {
+  background-color: transparent;
+  border: none; }
 
 /*# sourceMappingURL=article_writer.css.map */

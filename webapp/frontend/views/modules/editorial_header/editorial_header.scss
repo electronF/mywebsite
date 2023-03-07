@@ -1,7 +1,7 @@
 /* Colors */
 $primary_color: #606C38;
 $primary_color_dark: #283618;
-$primary_colo_light: #FEFAE0;
+$primary_color_light: #FEFAE0;
 $secondary_color: #DDA15E;
 $secondary_color_dark: #BC6C25;
 $text_color_black: #000;
@@ -32,9 +32,9 @@ $input_color: #E5E5E5;
 
             img
             {
-                width: 50px;
+                // width: 50px;
                 height: 50px;
-                background-color: #D3D3D3;
+                // background-color: #D3D3D3;
                 border-radius: 8px;
 
                 margin-right: 27px;

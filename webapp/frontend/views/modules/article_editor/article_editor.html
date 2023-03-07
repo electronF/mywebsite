@@ -1,4 +1,4 @@
-<div class="article_editor">
+<div class="article-editor">
     <div class="tools-bar">
         {% 
             module EditableDropDownButton(
@@ -33,21 +33,25 @@
                 alt=_(''), title=_("Select a font size")
             ) 
         %}
+        <div class="separator"></div>
         <div class="buttons-of-style">
             {% for detail in buttons_of_style_details %}
                 {% module IconButton(icon_path=detail["icon_path"], key=f"editor-tools-bar-button-of-style-") %}
             {% end %}
         </div>
+        <div class="separator"></div>
         <div class="buttons-of-text-alignment">
             {% for detail in buttons_of_text_alignment_details %}
                 {% module IconButton(icon_path=detail["icon_path"], key=f"editor-tools-bar-button-of-text-alignment-") %}
             {% end %}
         </div>
+        <div class="separator"></div>
         <div class="buttons-of-blocks">
             {% for detail in buttons_of_blocks_details %}
                 {% module IconButton(icon_path=detail["icon_path"], key=f"editor-tools-bar-button-of-block-") %}
             {% end %}
         </div>
+        <div class="separator"></div>
         <div class="buttons-of-media">
             {% for detail in buttons_of_media_details %}
                 {% module IconButton(icon_path=detail["icon_path"], key=f"editor-tools-bar-button-of-media-") %}

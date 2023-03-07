@@ -1,7 +1,7 @@
 import os
 import tornado.web
 
-import frontend.constants.path as frontend_path
+import frontend.constants.python.path as frontend_path
 
 
 class EditorialFooter(tornado.web.UIModule):

@@ -4,6 +4,8 @@ from frontend.views.modules import ArticleRenderer
 from frontend.views.modules import TextWriter
 from frontend.views.modules import EditorialHeader
 from frontend.views.modules import EditorialFooter
+from frontend.views.modules import EditableLabeledFrameContainer
+from frontend.views.modules import ArticleReference
 
 # UI Components
 from frontend.views.uix.components import IconButton

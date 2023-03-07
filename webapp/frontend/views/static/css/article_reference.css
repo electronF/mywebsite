@@ -1,0 +1,87 @@
+/* Colors */
+.article-reference {
+  display: flex;
+  flex-direction: column;
+  width: 250px; }
+  .article-reference button {
+    height: 44px;
+    width: 100%; }
+  .article-reference > div {
+    margin-bottom: 30px; }
+    .article-reference > div > span {
+      font-size: 18px;
+      font-weight: 500; }
+    .article-reference > div > div {
+      margin-top: 14px; }
+  .article-reference .authors-manager .authors-researcher {
+    display: flex;
+    flex-direction: column;
+    position: relative; }
+    .article-reference .authors-manager .authors-researcher .author-search-bar {
+      display: flex;
+      flex-direction: row;
+      border-radius: 8px;
+      background-color: #E5E5E5;
+      padding: 0 5px 0 20px; }
+      .article-reference .authors-manager .authors-researcher .author-search-bar input {
+        width: 100%;
+        height: 44px;
+        background-color: transparent !important;
+        border-radius: 0 !important;
+        padding: 0 !important; }
+      .article-reference .authors-manager .authors-researcher .author-search-bar button {
+        border: none;
+        background-color: transparent;
+        width: 32px;
+        height: 32px;
+        align-self: center;
+        display: flex; }
+        .article-reference .authors-manager .authors-researcher .author-search-bar button img {
+          margin: auto;
+          align-self: center;
+          width: 100%; }
+    .article-reference .authors-manager .authors-researcher .suggested-authors-list {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      z-index: 2;
+      top: 50px;
+      border-radius: 4px;
+      box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12), 0px 5px 5px -3px rgba(0, 0, 0, 0.2);
+      max-height: 240px;
+      width: 100%;
+      overflow-y: scroll;
+      background-color: white; }
+      .article-reference .authors-manager .authors-researcher .suggested-authors-list > div {
+        width: 100%;
+        height: 40px; }
+      .article-reference .authors-manager .authors-researcher .suggested-authors-list > div:hover {
+        background-color: #FEFAE0; }
+      .article-reference .authors-manager .authors-researcher .suggested-authors-list > div:first-child {
+        border-radius: 4px 4px 0 0; }
+      .article-reference .authors-manager .authors-researcher .suggested-authors-list > div:last-child {
+        border-radius: 0 0 4px 4px; }
+  .article-reference .authors-manager .authors-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 17px; }
+    .article-reference .authors-manager .authors-list > div {
+      margin-bottom: 10px; }
+  .article-reference .datetime-manager {
+    display: flex;
+    flex-direction: column; }
+    .article-reference .datetime-manager > div {
+      display: flex;
+      flex-direction: column; }
+      .article-reference .datetime-manager > div .datetime-frame:first-child {
+        margin-bottom: 17px; }
+      .article-reference .datetime-manager > div .datetime-frame {
+        display: flex;
+        flex-direction: column; }
+        .article-reference .datetime-manager > div .datetime-frame > span {
+          font-size: 14px;
+          font-weight: 400; }
+        .article-reference .datetime-manager > div .datetime-frame .datime-picker {
+          margin-top: 10.5px; }
+
+/*# sourceMappingURL=article_reference.css.map */

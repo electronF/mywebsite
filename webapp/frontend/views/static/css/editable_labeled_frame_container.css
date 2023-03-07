@@ -1,0 +1,43 @@
+/* Colors */
+.editable-labeled-frame-container {
+  min-height: 80px;
+  padding: 5px;
+  border: 1px solid #808080;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  box-sizing: border-box; }
+  .editable-labeled-frame-container .editor {
+    position: absolute;
+    word-wrap: break-word;
+    word-break: break-all;
+    width: calc(100% - 2 * 5px);
+    height: calc(100% - 2 * 5px); }
+  .editable-labeled-frame-container .editor:focus {
+    outline: none; }
+  .editable-labeled-frame-container .proposed-list-items {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12), 0px 5px 5px -3px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    max-height: 240px;
+    overflow-y: scroll;
+    bottom: -240px; }
+    .editable-labeled-frame-container .proposed-list-items > div {
+      width: 100%;
+      min-height: 40px;
+      max-height: 40px;
+      background-color: white; }
+    .editable-labeled-frame-container .proposed-list-items > div:first-child {
+      border-radius: 4px 4px 0 0; }
+    .editable-labeled-frame-container .proposed-list-items > div:last-child {
+      border-radius: 0 0 4px 4px; }
+    .editable-labeled-frame-container .proposed-list-items > div:hover {
+      background-color: #FEFAE0; }
+
+/*# sourceMappingURL=editable_labeled_frame_container.css.map */

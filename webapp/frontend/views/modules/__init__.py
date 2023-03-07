@@ -3,3 +3,5 @@ from .article_renderer.article_renderer import ArticleRenderer
 from .text_writer.text_writer import TextWriter
 from .editorial_header.editorial_header import EditorialHeader
 from .editorial_footer.editorial_footer import EditorialFooter
+from .editable_labeled_frame_container.editable_labeled_frame_container import EditableLabeledFrameContainer
+from .article_reference.article_reference import ArticleReference

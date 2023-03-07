@@ -17,12 +17,13 @@
                     {% module LabeledIconButton(
                         button_description["icon_path"], 
                         button_description["key"],
+                        on_click = button_description["on_click"],
                         button_name = button_description["button_name"],
                         title = button_description["title"],
                         alt = button_description["alt"]) 
                     %}
                 {% end %}
-                <button type="button" class="rounded-button bg-secondary-color fg-primary-color-dark margin-left-auto"> {{ _("Submit") }}</button>
+                <button type="button" class="rounded-button bg-secondary-color fg-primary-color-dark margin-left-auto" onclick="{{ publish_button_details['on_click']}}"> {{  _(publish_button_details["name"]) }}</button>
             </section>
             <section class="article-header">
                 <div class="article-title">
@@ -44,8 +45,20 @@
                 <div>
                     <span>{{_('Left paned visibility:')}}</span>
                     <div class="toogle-button">
-                        <button type="button" class="fg-primary-color-dark bg-secondary-color">{{_('Show')}}</button>
-                        <button type="button" class="fg-primary-color-dark">{{_('Hide')}}</button>
+                        <button 
+                            type="button" 
+                            class="fg-primary-color-dark {{['', 'bg-secondary-color'][show_hide_button_details[0]['is_active']]}}"
+                            onclick="{{show_hide_button_details[0]['on_click']}}"
+                        >
+                            {{_(show_hide_button_details[0]['name'])}}
+                        </button>
+                        <button 
+                            type="button" 
+                            class="fg-primary-color-dark {{['', 'bg-secondary-color'][show_hide_button_details[1]['is_active']]}}"
+                            onclick="{{show_hide_button_details[1]['on_click']}}"
+                        >
+                            {{_(show_hide_button_details[1]['name'])}}
+                        </button>
                     </div>
                 </div>
                 <div>
@@ -53,6 +66,7 @@
                         {% module IconButton(
                                 icon_path=disposition_button_detail['icon_path'], 
                                 key=f"editor-disposition-{disposition_button_detail['key']}",
+                                on_click=disposition_button_detail['on_click'],
                                 title=disposition_button_detail['title'],
                                 alt=disposition_button_detail['alt']
                             ) 
@@ -60,63 +74,14 @@
                     {% end %}
                 </div>
             </section>
-            <section class="article-centent-section">
-                <section class="article-reference">
-                    <div>
-                        <button class="rounded-button bg-secondary-color"> {{_('New Article')}} </button>
-                    </div>
-                    <div class="authors-manager">
-                        <span>{{_('Authors')}}</span>
-                        <div>
-                            <div>
-                                <input type="text" list="authors-list"/>
-                                <datalist id="authors-list">
-                                    
-                                    <option value="Pen"><i>Pen</i></option>
-                                    <option value="Pencil">Pencil</option>
-                                    <option value="Paper">Paper</option>
-                                </datalist>
-                            </div>
-                            <div class="authors-list">
-                                {% for author in list_authors %}
-                                    {% module LabeledFrameWithImage(image_path=author.miniature, label=author.surname, key="author-", alt = "delete", title= "Click here to delete this author") %}
-                                {% end %}
-                                {% for author in list_authors %}
-                                    {% module LabeledFrameWithImageAndButton(image_path=author.miniature, label=author.surname, key="author-", alt = "delete", title= "Click here to delete this author") %}
-                                {% end %}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="categories-manager">
-                        <span>{{_('Categories')}}</span>
-                        <div>
-                            {% for tag in list_tags %}
-                                {% module LabeledFrame(label=tag, key="tags-") %}
-                            {% end %}
-                        </div>
-                    </div>
-                    <div class="tags-manager">
-                        <span>{{_('Tags')}}</span>
-                        <div>
-                            {% for tag in list_tags %}
-                                {% module LabeledFrameWithButton(label=tag, key="tags-", alt = "delete", title= "Click here to delete this tag") %}
-                            {% end %}
-                        </div>
-                    </div>
-                    <div class="datetime-manager">
-                        <span>{{_('Date Time')}}</span>
-                        <div>
-                            <div class="datetime-frame">
-                                <span>{{_("From")}}</span>
-                                {% module DateTimePicker(datetime='', key='datetime-pciker-1') %}
-                            </div>
-                            <div class="datetime-frame">
-                                <span>{{_("To")}}</span>
-                                {% module DateTimePicker(datetime='', key='datetime-pciker-2') %}
-                            </div>
-                        </div>
-                    </div>
-                </section>
+            <section class="article-content-section">
+                {% module ArticleReference(
+                        key='article-reference-1', 
+                        list_authors = list_authors,
+                        list_categories = list_categories, 
+                        list_tags = list_tags
+                    ) 
+                %}
                 <section class="article-content">
                     {% module  ArticleEditor() %}
                     {% module  ArticleRenderer() %}

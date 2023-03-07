@@ -1,7 +1,7 @@
 /* Colors */
 $primary_color: #606C38;
 $primary_color_dark: #283618;
-$primary_colo_light: #FEFAE0;
+$primary_color_light: #FEFAE0;
 $secondary_color: #DDA15E;
 $secondary_color_dark: #BC6C25;
 $text_color_black: #000;
@@ -11,7 +11,7 @@ $text_color_light: #F4FCEB;
 $input_color: #E5E5E5;
 
 /* Font */
-$article_editor_font: 12px Inter;
+$article-editor_font: 12px Inter;
 
 input, textarea, .text-writer, select 
 {
@@ -24,7 +24,7 @@ input:focus, textarea, .text-writer:focus, select:focus
     outline: none;
 }
 
-.article_editor
+.article-editor
 {
     background-color: transparent;
     display: flex;
@@ -44,17 +44,39 @@ input:focus, textarea, .text-writer:focus, select:focus
 
         border-radius: 8px 8px 0 0;
 
+        .separator
+        {
+            align-self: center;
+            border-left: 1px solid rgba(255,255,255,0.3);
+            height: 20px;
+            line-height: normal;
+            list-style: none;
+            margin: 0 0;
+            outline: none;
+            overflow: hidden;
+            padding: 0;
+            text-decoration: none;
+            vertical-align: middle;
+            width: 0;
+        }
+
         .editable-dropdown-button
         {
             height: 100%;
             // width: 120px;
         }
 
+        .icon-button:hover
+        {
+            border-radius: 4px;
+            padding: 5px;
+        }
 
         .buttons-of-style
         {
             display: flex;
             flex-direction: row;
+            margin: auto 5px;
 
             .icon-button
             {
@@ -68,6 +90,7 @@ input:focus, textarea, .text-writer:focus, select:focus
         {
             display: flex;
             flex-direction: row;
+            margin: auto 5px;
             
             .icon-button
             {
@@ -81,6 +104,8 @@ input:focus, textarea, .text-writer:focus, select:focus
         {
             display: flex;
             flex-direction: row;
+            margin: auto 5px;
+            box-sizing: border-box;
             
             .icon-button
             {
@@ -93,12 +118,12 @@ input:focus, textarea, .text-writer:focus, select:focus
         {
             display: flex;
             flex-direction: row;
+            margin: auto 5px;
             
             .icon-button
             {
                 width: 32px;
                 height: 32px;
-                margin-right: 5;
             }
         }
 
@@ -113,7 +138,7 @@ input:focus, textarea, .text-writer:focus, select:focus
         > div
         {
             margin: auto 0;
-            margin-right: 18px;
+            margin-right: 10px;
         }
 
         div:last-child 
@@ -127,7 +152,7 @@ input:focus, textarea, .text-writer:focus, select:focus
         width: 100%;
         
         color: $text_color_black;
-        font-size: $article_editor_font;
+        font-size: $article-editor_font;
 
         .text-writer
         {

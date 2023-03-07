@@ -1,0 +1,58 @@
+<section class="article-reference" key="{{key}}">
+    {% if display_new_article_button == True %}
+        <div class="new-article-button">
+            <button class="rounded-button bg-secondary-color"> {{_('New Article')}} </button>
+        </div>
+    {% end %}
+    <div class="authors-manager">
+        <span>{{_('Authors')}}</span>
+        <div>
+            <div class="authors-researcher">
+                <div class="author-search-bar">
+                    <input type="text" list="authors-list"/>
+                    <button type="button">
+                        <img src="{{static_url('images/dropdown-icon.webp')}}" alt="" title="{{_('Click here to display the list of authors')}}">
+                    </button>
+                </div>
+                <div class="suggested-authors-list">
+                    <div value="Pen">Pen</div>
+                    <div value="Pencil">Pencil</div>
+                    <div value="Paper">Paper</div>
+                </div>
+            </div>
+            <div class="authors-list">
+                {% for author in list_authors %}
+                    {% module LabeledFrameWithImage(image_path=author.miniature, label=author.surname, key="author-", alt = "delete", title= "Click here to delete this author") %}
+                {% end %}
+                {% for author in list_authors %}
+                    {% module LabeledFrameWithImageAndButton(image_path=author.miniature, label=author.surname, key="author-", alt = "delete", title= "Click here to delete this author") %}
+                {% end %}
+            </div>
+        </div>
+    </div>
+    <div class="categories-manager">
+        <span>{{_('Categories')}}</span>
+        {% module EditableLabeledFrameContainer(list_categories, 'categories-manager') %}
+    </div>
+    <div class="tags-manager">
+        <span>{{_('Tags')}}</span>
+        {% module EditableLabeledFrameContainer(list_tags, 'tags-manager') %}
+    </div>
+
+    </div>
+    {% if display_datetime_picker == True %}
+        <div class="datetime-manager">
+            <span>{{_('Date Time')}}</span>
+            <div>
+                <div class="datetime-frame">
+                    <span>{{_("From")}}</span>
+                    {% module DateTimePicker(datetime=datetimes['from'], key='datetime-pciker-1') %}
+                </div>
+                <div class="datetime-frame">
+                    <span>{{_("To")}}</span>
+                    {% module DateTimePicker(datetime=datetimes['to'], key='datetime-pciker-2') %}
+                </div>
+            </div>
+        </div>
+    {% end %}
+</section>

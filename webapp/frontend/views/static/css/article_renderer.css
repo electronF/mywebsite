@@ -1,20 +1,20 @@
 /* Colors */
 /* Font */
-.article_renderer {
+.article-renderer {
   background-color: #283618;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   width: 100%;
   height: 100%; }
-  .article_renderer .alert-box {
+  .article-renderer .alert-box {
     background-color: transparent; }
-  .article_renderer .content {
+  .article-renderer .content {
     width: 100%;
     height: 100%;
     color: #000;
     background-color: #283618; }
-  .article_renderer h1, .article_renderer h2, .article_renderer h3, .article_renderer h4, .article_renderer h5, .article_renderer h6 {
+  .article-renderer h1, .article-renderer h2, .article-renderer h3, .article-renderer h4, .article-renderer h5, .article-renderer h6 {
     color: #283618; }
 
 /*# sourceMappingURL=article_renderer.css.map */

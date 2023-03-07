@@ -1,0 +1,16 @@
+<div class="editable-labeled-frame-container">
+    <div class="editor" contenteditable="true" tabindex="0" onblur="editableLabeledFrameContainerOnBlur(event);">
+        {% for labeled_frame in labeled_frames %}
+            {% module labeled_frame %}
+            <!-- {% module LabeledFrameWithButton(label=tag, key="tags-", alt = "delete", title= "Click here to delete this tag") %} -->
+        {% end %}
+    </div>
+
+    <div class="proposed-list-items">
+        {% for text in [f'texte-{i}' for i in range(12)] %}
+            <div class="">
+                {{text}}
+            </div>
+        {% end %}
+    </div>
+</div>
