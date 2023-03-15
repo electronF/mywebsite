@@ -1,0 +1,170 @@
+/* Colors */
+.bg-primary-color {
+  background-color: #606C38; }
+
+.fg-primary-color {
+  color: #606C38; }
+
+.bg-primary-color-dark {
+  background-color: #283618; }
+
+.fg-primary-color-dark {
+  color: #283618; }
+
+.bg-primary-color-light {
+  background-color: #FEFAE0; }
+
+.fg-primary-color-light {
+  color: #FEFAE0; }
+
+.bg-secondary-color {
+  background-color: #DDA15E; }
+
+.fg-secondary-color {
+  color: #DDA15E; }
+
+.bg-secondary-color-dark {
+  background-color: #BC6C25; }
+
+.fg-secondary-color-dark {
+  color: #BC6C25; }
+
+.margin-left-auto {
+  margin-left: auto; }
+
+.margin-right-auto {
+  margin-right: auto; }
+
+.margin-top-auto {
+  margin-top: auto; }
+
+.margin-bottom-auto {
+  margin-bottom: auto; }
+
+body {
+  margin: 0; }
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.2); }
+
+.rounded-button {
+  border-radius: 8px;
+  padding: 8px 50px;
+  border: none;
+  font-size: 14px;
+  font-weight: 500; }
+
+.editorial-header {
+  padding-left: 26px;
+  padding-right: 26px; }
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 0 26px; }
+  main .actions-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 30px 0;
+    height: 44px; }
+    main .actions-bar > div {
+      margin-right: 50px; }
+    main .actions-bar > div:last-child {
+      margin-right: 0; }
+    main .actions-bar .labeled-icon-button {
+      margin-right: 19px; }
+      main .actions-bar .labeled-icon-button button {
+        width: 44px;
+        height: 44px; }
+      main .actions-bar .labeled-icon-button button:hover {
+        background-color: transparent; }
+    main .actions-bar .labeled-icon-button:last-child {
+      margin-right: 0; }
+    main .actions-bar .article-button {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap; }
+    main .actions-bar .disposition-button {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap; }
+    main .actions-bar .option-researcher {
+      display: flex;
+      flex-direction: column;
+      position: relative; }
+      main .actions-bar .option-researcher .suggested-options-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        z-index: 2;
+        top: 50px;
+        border-radius: 4px;
+        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12), 0px 5px 5px -3px rgba(0, 0, 0, 0.2);
+        max-height: 240px;
+        width: 100%;
+        overflow-y: scroll;
+        background-color: white; }
+        main .actions-bar .option-researcher .suggested-options-list > div {
+          width: 100%;
+          height: 40px;
+          padding-left: 20px;
+          line-height: 2.5; }
+        main .actions-bar .option-researcher .suggested-options-list > div:hover {
+          background-color: #FEFAE0; }
+        main .actions-bar .option-researcher .suggested-options-list > div:first-child {
+          border-radius: 4px 4px 0 0; }
+        main .actions-bar .option-researcher .suggested-options-list > div:last-child {
+          border-radius: 0 0 4px 4px; }
+    main .actions-bar .field-with-image {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      background-color: #E5E5E5;
+      border-radius: 8px;
+      padding: 0 5px 0 10px;
+      height: 100%; }
+      main .actions-bar .field-with-image input {
+        background-color: transparent;
+        border: none;
+        color: #283618;
+        font-size: 18px;
+        width: 100%;
+        padding-right: 6px; }
+      main .actions-bar .field-with-image input::placeholder {
+        color: #283618; }
+      main .actions-bar .field-with-image input:focus {
+        outline: none; }
+      main .actions-bar .field-with-image button {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        border: none;
+        background-color: transparent;
+        align-self: center; }
+        main .actions-bar .field-with-image button img {
+          width: 100%;
+          margin: auto;
+          align-self: center; }
+    main .actions-bar .search-bar {
+      padding-left: 0;
+      flex-grow: 1; }
+      main .actions-bar .search-bar button {
+        width: 50px; }
+        main .actions-bar .search-bar button img {
+          height: 24px;
+          width: auto; }
+    main .actions-bar .option-list-bar:hover, main .actions-bar .option-list-bar input:hover {
+      cursor: pointer; }
+    main .actions-bar .option-list-bar input {
+      width: 180px;
+      padding-left: 10px; }
+  main .article-reference {
+    padding-right: 30px;
+    border-right: 1px solid #808080;
+    padding-bottom: 250px; }
+    main .article-reference input {
+      background-color: transparent; }
+
+/*# sourceMappingURL=editorial_home.css.map */

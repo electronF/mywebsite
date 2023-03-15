@@ -43,7 +43,38 @@ class EditableDropdownButton
             }
         })
 
-        document.readyState
+        $('.editable-dropdown-button .dropdown-menu .dropdown-item').on('click', (event)=>{
+            var spans = event.currentTarget.getElementsByTagName('span') as HTMLCollectionOf<HTMLSpanElement>
+            if(spans.length > 0)
+            {
+                var inputs = (
+                    event.currentTarget.parentElement.parentElement.getElementsByTagName('input') 
+                )
+
+                if(inputs.length > 0)
+                {
+                    for(var parentElement of $(event.currentTarget).parent().children('.dropdown-item'))
+                    {
+                        for(var element of $(parentElement).children('div'))
+                        {
+                            element.classList.remove('checked');
+                            try {
+                                element.removeAttribute('title');
+                            }
+                            catch (error) { }
+                        }
+                    }
+                    
+                    $(event.currentTarget).parent().children('.dropdown-item div').removeClass('checked')
+                    try {
+                        $(event.currentTarget).parent().children('.dropdown-item div').removeAttr('title')   
+                    } catch (error) {}
+                    event.currentTarget.getElementsByTagName('div')[0]?.getElementsByTagName('div')[0]?.classList.add('checked')
+                    event.currentTarget.getElementsByTagName('div')[0]?.getElementsByTagName('div')[0]?.setAttribute('title', 'selected')
+                    inputs[0].value = spans[0].textContent 
+                }
+            }
+        })
     }
 
     listen()

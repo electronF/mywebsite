@@ -40,15 +40,20 @@
       .editable-dropdown-button .list-item .dropdown-item div {
         width: fit-content;
         display: flex; }
-        .editable-dropdown-button .list-item .dropdown-item div img {
+        .editable-dropdown-button .list-item .dropdown-item div > div {
           align-self: center;
           width: 14px;
           height: 14px;
-          border: 1px solid gray;
           margin-right: 10px; }
         .editable-dropdown-button .list-item .dropdown-item div span {
           width: 80px; }
     .editable-dropdown-button .list-item .dropdown-item:hover {
       background-color: #FEFAE0; }
+
+.checked {
+  background-image: url("./../../../static/images/primary-dark-check-icon.svg");
+  background-size: 18px;
+  background-repeat: no-repeat;
+  background-position: center; }
 
 /*# sourceMappingURL=editable_dropdown_button.css.map */

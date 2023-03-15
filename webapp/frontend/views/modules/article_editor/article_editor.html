@@ -2,33 +2,21 @@
     <div class="tools-bar">
         {% 
             module EditableDropDownButton(
-                key="editable-dropdown-button-text-style", items=[], 
-                default_value=_("Text Body"), placeholder=_("Select a font size"), 
+                key="editable-dropdown-button-text-style", items=text_styles, 
+                default_value=_(f"Text Body"), placeholder=_(f"Select a font size"), 
                 alt=_(''), title=_("Select a font size")
             ) 
         %}
         {% 
             module EditableDropDownButton(
-                key="editable-dropdown-button-text-font-size", items=[
-                                                                        "6 pt", "7pt", "8 pt", "9 pt",
-                                                                        "10 pt", "10.5 pt", "11pt", "12 pt",
-                                                                        "13 pt", "14 pt", "15 pt", "16 pt",
-                                                                        "18 pt", "20 pt", "21 pt", "22 pt",
-                                                                        "24 pt", "26 pt", "28 pt", "32 pt",
-                                                                        "36 pt", "40 pt", "42 pt", "44 pt",
-                                                                        "48 pt", "54 pt", "60 pt", "66pt",
-                                                                        "72 pt", "80 pt", "88 pt", "96 pt"
-                                                                    ],
-                default_value="12 pt", placeholder=_("Select a font size"), 
+                key="editable-dropdown-button-text-font-size", items=font_sizes,
+                default_value=f"12 pt", placeholder=_("Select a font size"), 
                 alt=_(''), title=_("Select a font size") 
             ) 
         %}
         {% 
             module EditableDropDownButton(
-                key="editable-dropdown-button-text-font-weight", items=[
-                                                                        "light", "regular", "medium", "bold", 
-                                                                        "black"
-                                                                    ],
+                key="editable-dropdown-button-text-font-weight", items=font_weights,
                 default_value="Regular", placeholder=_("Select a weight"), 
                 alt=_(''), title=_("Select a font size")
             ) 

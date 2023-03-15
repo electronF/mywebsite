@@ -42,16 +42,7 @@ class DateTimePicker
         }) 
 
         $(".time-picker-button").on("blur", (event) => {
-            // if(this.#clickOnDateOrTime == false)
-            // {
-            //     var timeDisplayer = event.currentTarget.parentElement.nextElementSibling.getElementsByClassName('time-picker')
-            //     if(timeDisplayer.length > 0)
-            //     {
-            //         $(timeDisplayer[0] as HTMLElement).css({'display': 'none'})
-            //     }
-            // }
-
-            // this.#clickOnDateOrTime = false
+            
         })
 
         $('.hour-picker ul li a').on('click', (event) => {
@@ -96,6 +87,29 @@ class DateTimePicker
                     timeFields[0].value =  `${hour}:${minute}`
                 }
 
+            }
+        })
+
+        document.addEventListener('click', (event) => {
+            var element = event.target as HTMLElement
+            var condition1 =  (
+                element.tagName.trim().toLowerCase() === 'img' 
+                && element.parentElement.tagName.trim().toLowerCase() == 'button')
+              
+            if( condition1)
+            {
+                element = element.parentElement
+            }
+
+            var condition2 = (
+                this.#clickOnDateOrTime == true
+                || element.classList.contains("time-picker-button")
+            )
+
+            if(!condition2)
+            {
+                $(".time-picker").css({'display':'none'})
+                this.#clickOnDateOrTime = false
             }
         })
     }

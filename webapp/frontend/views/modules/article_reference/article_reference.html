@@ -1,7 +1,7 @@
 <section class="article-reference" key="{{key}}">
     {% if display_new_article_button == True %}
         <div class="new-article-button">
-            <button class="rounded-button bg-secondary-color"> {{_('New Article')}} </button>
+            <button class="rounded-button bg-secondary-color fg-primary-color-darkà&"> {{_('New Article')}} </button>
         </div>
     {% end %}
     <div class="authors-manager">
@@ -9,7 +9,7 @@
         <div>
             <div class="authors-researcher">
                 <div class="author-search-bar">
-                    <input type="text" list="authors-list"/>
+                    <input type="text" placeholder="Search author" list="authors-list"/>
                     <button type="button">
                         <img src="{{static_url('images/dropdown-icon.webp')}}" alt="" title="{{_('Click here to display the list of authors')}}">
                     </button>

@@ -19,7 +19,8 @@ def make_app():
     return tornado.web.Application(
         [
             (r'.', IndexHandler),
-            (r'/editorial', EditorialHomeHandler),
+            (r'/editorial/*', EditorialHomeHandler),
+            (r'/editorial/home', EditorialHomeHandler),
             (r'/editorial/article', ArticleWriterHandler),
         ],
         **(settings.SETTINGS))

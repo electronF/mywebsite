@@ -59,7 +59,11 @@ input, select, textarea {
   border-radius: 8px;
   border: none;
   padding: 10px 20px;
-  font-size: 12pt; }
+  font-size: 12pt;
+  color: #283618; }
+
+input::placeholder, select::placeholder, textarea::placeholder {
+  color: rgba(40, 54, 24, 0.63); }
 
 input:focus, select, textarea:focus {
   outline: none; }

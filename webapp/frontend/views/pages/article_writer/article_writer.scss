@@ -40,7 +40,6 @@ $input_color: #E5E5E5;
     color: $primary_color_light;
 }
 
-
 .bg-secondary-color
 {
     background-color: $secondary_color;
@@ -106,7 +105,14 @@ input, select, textarea
     border: none;
     padding: 10px 20px;
     font-size: 12pt;
+    color: $primary_color_dark;
 }
+
+input::placeholder, select::placeholder, textarea::placeholder
+{
+    color: rgba($color: $primary_color_dark, $alpha: .63);
+}
+
 
 input:focus, select, textarea:focus
 {

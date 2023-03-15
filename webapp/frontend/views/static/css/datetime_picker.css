@@ -49,7 +49,8 @@
     border-radius: 8px;
     z-index: 2;
     position: absolute;
-    display: none; }
+    display: none;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12), 0px 5px 5px -3px rgba(0, 0, 0, 0.2); }
     .datetime-picker-displayer .time-picker > div:first-child {
       margin-right: 3px; }
     .datetime-picker-displayer .time-picker .hour-picker {

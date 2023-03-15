@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 class Author {
     constructor(name, surname, imagePath) {
         this.getName = () => this._name;
@@ -25,4 +23,4 @@ class Author {
         };
     }
 }
-exports.default = Author;
+export default Author;
