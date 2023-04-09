@@ -1,4 +1,4 @@
-
+// import GenerateLabeledFrameWithButton from "./views/uix/components/labeled_frame_with_button/labeled_frame_with_button.js";
 class EditorialHome {
     constructor() {
         this.searchValue = '';
@@ -32,12 +32,6 @@ class EditorialHome {
                 input.value = event.currentTarget.textContent;
                 event.currentTarget.parentElement.style.setProperty('display', 'none');
             }
-
-            // var btn = new GenerateLabeledFrameWithButton('Super', 'cool', '', 'CLick here');
-            // $(btn.render()).appendTo(".list-articles");
-
-            // console.log('here', btn.render())
-            // $('.').append()
         });
         document.addEventListener('click', function (event) {
             var element = event.target;
@@ -49,10 +43,42 @@ class EditorialHome {
             if (!condition) {
                 $('.suggested-options-list').css({ "display": 'none' });
             }
+            // var btn = new GenerateLabeledFrameWithButton('Super', 'cool', '', 'CLick here');
+            // $(btn.render()).appendTo(".list-articles");
+            // console.log('here', btn.render());
+            // // $('.').append()
         });
     }
     listen() {
         this.eventListenner();
     }
 }
+class EditorialHomeActionsBar {
+    displayPublishedArticles() {
+        console.log('list of published articles');
+    }
+    displayArticlesInDraft() {
+        console.log('list of articles in draft');
+    }
+    displayArticlesInTrash() {
+        console.log('list of articles in trash');
+    }
+    displayArticlesAsGrid() {
+        console.log('display articles as grid');
+    }
+    displayArticlesAsList() {
+        console.log('display articles as list');
+    }
+}
+let editorialHomeActionsBar = new EditorialHomeActionsBar();
+let editorialHomeFunctions = {
+    'displayPublishedArticles': editorialHomeActionsBar.displayPublishedArticles,
+    'displayArticlesInDraft': editorialHomeActionsBar.displayArticlesInTrash,
+    'displayArticlesInTrash': editorialHomeActionsBar.displayArticlesInTrash,
+    'displayArticlesAsGrid': editorialHomeActionsBar.displayArticlesAsGrid,
+    'displayArticlesAsList': editorialHomeActionsBar.displayArticlesAsList
+};
 (new EditorialHome()).listen();
+
+
+console.log('here cool', editorialHomeFunctions)

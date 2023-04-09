@@ -5,3 +5,4 @@ from .labeled_frame.labeled_frame import LabeledFrame
 from .labeled_frame_with_button.labeled_frame_with_button import LabeledFrameWithButton
 from .labeled_frame_with_image.labeled_frame_with_image import LabeledFrameWithImage
 from .labeled_frame_with_image_and_button.labeled_frame_with_image_and_button import LabeledFrameWithImageAndButton
+from .article_frame.article_frame import ArticleFrame

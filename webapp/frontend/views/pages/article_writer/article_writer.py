@@ -4,7 +4,7 @@ import tornado.web
 
 from ...uix.components import LabeledFrameWithButton
 
-from api.modelsDTO.authors import AuthorDTO
+from webapi.modelsDTO.authors import AuthorDTO
 
 
 class ArticleWriterHandler(tornado.web.RequestHandler):

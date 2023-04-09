@@ -1,0 +1,159 @@
+
+$primary_color: #606C38;
+$primary_color_dark: #283618;
+$primary_color_light: #FEFAE0;
+$secondary_color: #DDA15E;
+$secondary_color_dark: #BC6C25;
+$text_color_black: #000;
+$text_color_white: #FFF;
+$text_color_dark: #283618;
+$text_color_light: #F4FCEB;
+$input_color: #E5E5E5;
+
+$band_color: #F8F8F8;
+
+$border-radius: 8px;
+$popup-border-radius: 4px;
+
+$box-shadow: 0px 0px 5px 3px  rgba(96, 108, 56, 0.14),0px 3px 14px 2px rgba(96, 108, 56, 0.12), 0px 5px 5px -3px rgba(96, 108, 56, 0.2);
+
+
+
+.article-frame
+{
+    display: flex;
+    flex-direction: column;
+    background-color: $primary_color_light;
+    border-radius: $border-radius;
+
+
+    .article-frame-header
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 30px;
+        background-color: $band_color;
+        border-radius: $border-radius;
+
+        font-size: 12px;
+
+        .article-authors-images
+        {
+            font-size: 8px;
+            font-weight: 100;
+            color: #000;
+            margin-right: 5px;
+
+            align-self: center;
+        }
+
+        .article-authors
+        {
+            display: flex;
+            color: #283618;
+            font-weight: 500;
+
+            align-self: center;
+        }
+
+        .articles-categories
+        {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+
+            ul 
+            {
+                display: flex;
+                align-self: center;
+                margin: auto;
+
+                li
+                {
+                    margin: auto 12px;
+                    color: #A7A7A7;
+                }
+            }
+        }
+    }
+
+    .article-frame-content
+    {
+        display: flex;
+        flex-direction: column;
+        
+        margin: auto 0;
+        background-color: $primary_color_light;
+        
+        .article-image
+        {
+            margin: auto;
+            width: 100%;
+            height: 200px;
+            background-color: gray;
+        }
+
+        .article-title
+        {
+            font-size: 28px;
+            color: #283618;
+            font-weight: 500;
+            padding: 20px 30px;
+        }
+
+        .article-description
+        {
+            font-size: 13px;
+            padding: 30px;
+            padding-top: 0;
+        }
+
+
+    }
+
+    .article-frame-footer
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px 30px;
+        background-color: $band_color;
+        border-radius: $border-radius;
+
+        .article-actions
+        {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .article-datetime
+        {
+            display: flex;
+            width: fit-content;
+
+            span
+            {
+                width: fit-content;
+                height: fit-content;
+                align-self: center;
+
+                font-size: 12px;
+                color: #000;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+.article-frame:hover
+{
+    box-shadow: $box-shadow;
+}
+
+
+.authors-et-al{
+    font-size: 12;
+    font-weight: 500;
+    color: #767874;
+}

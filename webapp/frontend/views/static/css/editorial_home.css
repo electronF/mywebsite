@@ -58,6 +58,12 @@ button:hover {
   padding-left: 26px;
   padding-right: 26px; }
 
+.flex-direction-row {
+  flex-direction: column; }
+
+.flex-direction-column {
+  flex-direction: row; }
+
 main {
   display: flex;
   flex-direction: column;
@@ -160,11 +166,26 @@ main {
     main .actions-bar .option-list-bar input {
       width: 180px;
       padding-left: 10px; }
-  main .article-reference {
-    padding-right: 30px;
-    border-right: 1px solid #808080;
-    padding-bottom: 250px; }
-    main .article-reference input {
-      background-color: transparent; }
+  main .content-section {
+    display: flex; }
+    main .content-section .article-reference {
+      padding-right: 30px;
+      border-right: 1px solid #808080;
+      padding-bottom: 250px;
+      min-width: 250px; }
+      main .content-section .article-reference input {
+        background-color: transparent; }
+    main .content-section .list-articles {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-content: start; }
+      main .content-section .list-articles .article-frame {
+        width: 450px;
+        height: fit-content;
+        margin: 0 17px 34px 17px;
+        position: relative; }
 
 /*# sourceMappingURL=editorial_home.css.map */

@@ -2,15 +2,13 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{{title}}</title>
         <link href="{{static_url('lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
         <link rel="stylesheet" href="{{static_url('css/editorial_home.css')}}">
+        <link rel="stylesheet" href="{{static_url('css/labeled_frame_with_button.css')}}">
         <script src="{{static_url('lib/jquery/jquery-min.js')}}"></script>
-        <script>
-            import GenerateLabeledFrameWithButton from "./views/uix/components/labeled_frame_with_button/labeled_frame_with_button";
-        </script>
     </head>
     <body>
         {% module EditorialHeader(author=current_author)%}
@@ -71,14 +69,14 @@
                     ) 
                 %}
                 <section class="list-articles">
-                    
+                    {% for index, article in enumerate(list_articles) %}
+                        {% module ArticleFrame(key=f"article-frame-{index}", article=article) %}
+                    {% end %}
                 </section>
             </section>
         </main>
         {% module EditorialFooter() %}
     </body>
-    <script src="{{static_url('js/views/uix/components/labeled_frame_with_button/labeled_frame_with_button.js')}}" type="module"></script>
     <script src="{{static_url('js/editorial_home.js')}}" type="module"></script>
-    <!-- <script src="{{static_url('js/views/uix/components/labeled_frame_with_button/labeled_frame_with_button.js')}}"></script> -->
     <script src="{{static_url('lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 </html>

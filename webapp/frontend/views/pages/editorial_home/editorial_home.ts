@@ -1,7 +1,7 @@
-import Author from "../../../types/author"
-import ArticleCategory from "../../../types/category"
-import ArticleTag from "../../../types/tags"
-import GenerateLabeledFrameWithButton from "../../uix/components/labeled_frame_with_button/labeled_frame_with_button"
+import Author from "../../../types/author.js"
+import ArticleCategory from "../../../types/category.js"
+import ArticleTag from "../../../types/tag.js"
+import GenerateLabeledFrameWithButton from "../../uix/components/labeled_frame_with_button/labeled_frame_with_button.js"
 
 
 class EditorialHome
@@ -69,8 +69,9 @@ class EditorialHome
             }
 
             var btn = new GenerateLabeledFrameWithButton('Super', 'cool', '', 'CLick here')
+            $(btn.render()).appendTo(".list-articles");
 
-            $(btn.render()).appendTo(".list-articles")
+            console.log('here', btn.render())
             // $('.').append()
         })
     }
@@ -80,6 +81,48 @@ class EditorialHome
         this.eventListenner()
     }
 }
+
+
+class EditorialHomeActionsBar
+{
+    displayPublishedArticles()
+    {
+        console.log('list of published articles')
+    }
+
+    displayArticlesInDraft()
+    {
+        console.log('list of articles in draft')
+    }
+
+    displayArticlesInTrash()
+    {
+        console.log('list of articles in trash')
+    }
+
+    displayArticlesAsGrid()
+    {
+        console.log('display articles as grid')
+    }
+
+    displayArticlesAsList()
+    {
+        console.log('display articles as list')
+    }
+}
+
+
+var editorialHomeActionsBar = new EditorialHomeActionsBar();
+
+var editorialHomeFunctions = {
+    'displayPublishedArticles': editorialHomeActionsBar.displayPublishedArticles,
+    'displayArticlesInDraft': editorialHomeActionsBar.displayArticlesInTrash,
+    'displayArticlesInTrash': editorialHomeActionsBar.displayArticlesInTrash,
+    'displayArticlesAsGrid': editorialHomeActionsBar.displayArticlesAsGrid,
+    'displayArticlesAsList' : editorialHomeActionsBar.displayArticlesAsList
+};
+
+
 
 
 (new EditorialHome()).listen()

@@ -1,4 +1,4 @@
-import Article from "../../../types/article";
+import Article from "../../../types/article.js";
 
 class ArticleWriter
 {

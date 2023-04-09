@@ -1,6 +1,6 @@
 import Author from "../../../types/author";
 import ArticleCategory from "../../../types/category";
-import ArticleTag from "../../../types/tags";
+import ArticleTag from "../../../types/tag";
 
 
 class ArticleReference

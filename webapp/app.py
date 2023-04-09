@@ -13,6 +13,9 @@ import frontend.constants.python.path as frontend_path
 import settings
 
 
+import mimetypes
+mimetypes.add_type("application/javascript", ".js", True)
+
 PORT = 8888
 
 def make_app():
@@ -22,6 +25,18 @@ def make_app():
             (r'/editorial/*', EditorialHomeHandler),
             (r'/editorial/home', EditorialHomeHandler),
             (r'/editorial/article', ArticleWriterHandler),
+            (r"/images/profiles/(.*)", 
+                tornado.web.StaticFileHandler, 
+                {'path': os.path.join(".", "data", "users", "images", "profiles")}
+            ),
+            (r"/images/miniatures/(.*)", 
+                tornado.web.StaticFileHandler, 
+                {'path': os.path.join(".", "data", "users", "images", "miniatures")}
+            ),
+            (r"/images/covers/(.*)", 
+                tornado.web.StaticFileHandler, 
+                {'path': os.path.join(".", "data", "users", "images", "covers")}
+            ),
         ],
         **(settings.SETTINGS))
 

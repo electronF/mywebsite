@@ -1,0 +1,182 @@
+DROP TABLE IF EXISTS authorsarticles;
+DROP TABLE IF EXISTS articlescategories;
+DROP TABLE IF EXISTS authorsprofilesimages;
+DROP TABLE IF EXISTS articlescoversimages;
+DROP TABLE IF EXISTS articlesmedias;
+DROP TABLE IF EXISTS authors;
+DROP TABLE IF EXISTS articles;
+DROP TABLE IF EXISTS categories;
+
+
+------- Create functions HERE ---------------
+DROP FUNCTION IF EXISTS is_length_between;
+CREATE FUNCTION is_length_between(field_value VARCHAR, min_size INT, max_size INT)
+  RETURNS BOOL AS 
+  $BODY$
+    BEGIN
+      RETURN LENGTH(field_value) <= min_size AND LENGTH(field_value) <= max_size;
+    END;
+  $BODY$
+  LANGUAGE plpgsql
+  IMMUTABLE;
+
+DROP FUNCTION IF EXISTS is_value_between;
+CREATE FUNCTION is_value_between(field REAL, min_value REAL, max_value REAL)
+  RETURNS BOOL AS 
+  $BODY$
+    BEGIN
+      RETURN field_value >= min_value AND field_value <= max_value;
+    END;
+  $BODY$
+  LANGUAGE plpgsql
+  IMMUTABLE;
+
+DROP FUNCTION IF EXISTS is_in_iterable;
+CREATE FUNCTION is_in_iterable(field_value ANYELEMENT, iterable anyarray)
+  RETURNS BOOL AS
+  $$
+  	DECLARE
+	  	item VARCHAR;
+    BEGIN
+      FOREACH item SLICE 0 IN ARRAY iterable 
+	  	LOOP
+        IF item = field_vale THEN
+          RETURN TRUE;
+        END IF;
+      END LOOP;
+      RETURN FALSE;
+    END;
+  $$
+  LANGUAGE plpgsql
+  IMMUTABLE;
+
+----- Create increment sequence here  -----
+--- Delete sequences if exist ----
+DROP SEQUENCE IF EXISTS authors_sequence;
+DROP SEQUENCE IF EXISTS categories_sequence;
+DROP SEQUENCE IF EXISTS articles_sequence;
+DROP SEQUENCE IF EXISTS authorsprofilesimages_sequence;
+DROP SEQUENCE IF EXISTS articlescoversimages_sequence;
+DROP SEQUENCE IF EXISTS articlesmedias_sequence;
+
+
+--- Create sequences ---
+CREATE SEQUENCE authors_sequence;
+CREATE SEQUENCE categories_sequence;
+CREATE SEQUENCE articles_sequence;
+CREATE SEQUENCE authorsprofilesimages_sequence;
+CREATE SEQUENCE articlescoversimages_sequence;
+CREATE SEQUENCE articlesmedias_sequence;
+
+----- Abstract classes here -----
+
+
+----- Create tables here -----
+DROP TABLE IF EXISTS authors;
+CREATE TABLE authors(
+	id VARCHAR(13) NOT NULL DEFAULT CONCAT('AUTHOR', TO_CHAR(NEXTVAL('authors_sequence'), '0000000FM')), 
+	surname VARCHAR(100) NOT NULL CONSTRAINT authors_surname_constraint CHECK (is_length_between(surname, 3, 100)),
+	name VARCHAR(100) NOT NULL CONSTRAINT authors_name_constraint CHECK (is_length_between(name, 3, 100)),
+	gender VARCHAR(6) NOT NULL CONSTRAINT avatars_gender_constraint CHECK(is_in_iterable(gender, '{"MALE", "FEMALE", "OTHER"}')),
+	email VARCHAR(150) NOT NULL CONSTRAINT authors_email_constraint CHECK (is_length_between(email, 5, 150)),
+	about_me TEXT,
+	account_state VARCHAR(10) NOT NULL CONSTRAINT authors_account_state_constraint CHECK (is_in_iterable(account_state, '{"ACTIVE", "UNACTIVE", "DELETE", "FREEZE"}')),
+	register_at TIMESTAMP NOT NULL DEFAULT NOW(),
+	PRIMARY KEY(id)
+);
+
+DROP TABLE IF EXISTS articles;
+CREATE TABLE articles(
+	id VARCHAR(17) PRIMARY KEY NOT NULL DEFAULT CONCAT('ARTICLE', TO_CHAR(NEXTVAL('articles_sequence'), '0000000000FM')), 
+	title VARCHAR(250) NOT NULL CONSTRAINT articles_title_constraint CHECK (is_length_between(title, 1, 250)),
+	description VARCHAR(250) NOT NULL CONSTRAINT articles_description_constraint CHECK (is_length_between(description, 50, 500)),
+	tags TEXT,
+	content TEXT NOT NULL CONSTRAINT articles_content_constraint CHECK (LENGTH(content)>100),
+	create_at TIMESTAMP NOT NULL DEFAULT NOW(),
+	publish_at TIMESTAMP,
+	update_at TIMESTAMP
+);
+
+DROP TABLE IF EXISTS categories;
+CREATE TABLE categories(
+	id VARCHAR(12) PRIMARY KEY NOT NULL DEFAULT CONCAT('CATEGORY', TO_CHAR(NEXTVAL('categories_sequence'), '0000FM')), 
+	name VARCHAR(100) NOT NULL CONSTRAINT articles_title_constraint CHECK (is_length_between(name, 1, 100)),
+	description TEXT
+);
+
+DROP TABLE IF EXISTS authorsarticles;
+CREATE TABLE authorsarticles(
+	author_id  VARCHAR,
+	article_id  VARCHAR,
+	CONSTRAINT authorsarticles_author_id_fk FOREIGN KEY(author_id) REFERENCES authors(id) ON DELETE SET NULL,
+	CONSTRAINT authorsarticles_article_id_fk FOREIGN KEY(article_id) REFERENCES articles(id) ON DELETE SET NULL
+);
+
+DROP TABLE IF EXISTS articlescategories;
+CREATE TABLE articlescategories(
+	article_id VARCHAR,
+	category_id  VARCHAR,
+	CONSTRAINT articlescategories_article_id_fk FOREIGN KEY(article_id) REFERENCES articles(id) ON DELETE SET NULL,
+	CONSTRAINT articlescategories_category_id_fk FOREIGN KEY(category_id) REFERENCES categories(id) ON DELETE SET NULL
+);
+
+DROP TABLE IF EXISTS authorsprofilesimages;
+CREATE TABLE authorsprofilesimages(
+	id VARCHAR(28) NOT NULL DEFAULT CONCAT('AUTH-PRO-IMG', TO_CHAR(NEXTVAL('authorsprofilesimages_sequence'), '0000000000000000FM')),
+	author_id VARCHAR,
+	import_path VARCHAR NOT NULL, 
+	type VARCHAR NOT NULL CONSTRAINT authorsprofilesimages_type_constraint CHECK(is_in_iterable(type, '{"BANNER", "PROFILE"}')),
+	is_used BOOLEAN NOT NULL DEFAULT false,
+	CONSTRAINT authorsprofilesimages_author_id_fk FOREIGN KEY(author_id) REFERENCES authors(id) ON DELETE SET NULL
+);
+
+DROP TABLE IF EXISTS articlescoversimages;
+CREATE TABLE articlescoversimages (
+	id VARCHAR(23) PRIMARY KEY NOT NULL DEFAULT CONCAT('ART-COVER-IMG', TO_CHAR(NEXTVAL('articlescoversimages_sequence'), '0000000000FM')),
+	article_id VARCHAR,
+	import_path VARCHAR NOT NULL,
+	is_used BOOLEAN DEFAULT false,
+	CONSTRAINT articlescoversimages_article_id_fk FOREIGN KEY(article_id) REFERENCES articles(id) ON DELETE CASCADE
+);
+
+DROP TABLE IF EXISTS articlesmedias;
+CREATE TABLE articlesmedias(
+	id VARCHAR(29) PRIMARY KEY  NOT NULL DEFAULT CONCAT('ART-MEDIA', TO_CHAR(NEXTVAL('articlesmedias_sequence'), '00000000000000000000FM')),
+	article_id VARCHAR, 
+	type VARCHAR NOT NULL CONSTRAINT articlesmedias_type_constraint CHECK(is_in_iterable(type, '{"IMAGE", "VIDEO", "AUDIO"}')),
+	import_path VARCHAR NOT NULL,
+	CONSTRAINT articlesmedias_article_id_fk FOREIGN KEY(article_id) REFERENCES articles(id) ON DELETE CASCADE
+);
+
+DROP TABLE IF EXISTS articlesmediasreferences;
+CREATE TABLE articlesmediareferences(
+	article_id VARCHAR,
+	name VARCHAR NOT NULL,
+	authors TEXT NOT NULL,
+	edition VARCHAR,
+	institution VARCHAR,
+	publish_at DATE NOT NULL,
+	index INTEGER NOT NULL,
+	CONSTRAINT articlesmediareferences_article_id_fk FOREIGN KEY(article_id) REFERENCES articles(id) ON DELETE CASCADE
+);
+
+DROP TABLE IF EXISTS articlesreferences;
+CREATE TABLE articlesreferences(
+	article_id VARCHAR,
+	name VARCHAR NOT NULL,
+	authors TEXT NOT NULL,
+	edition VARCHAR,
+	institution VARCHAR,
+	type VARCHAR NOT NULL, -- WEB SITE, THESIS, MEMORY, REPPORT, ARTICLE, NEWS PAPER... 
+	publish_at DATE NOT NULL,
+	CONSTRAINT articlesreferences_article_id_fk FOREIGN KEY(article_id) REFERENCES articles(id) ON DELETE CASCADE
+);
+
+DROP TABLE IF EXISTS authorslogins;
+CREATE TABLE authorslogins(  
+    login VARCHAR NOT NULL,
+    passcode VARCHAR NOT NULL,
+    author_id VARCHAR NOT NULL, --No constraint because it is a sha256 code
+    CONSTRAINT authorslogins_author_id_fk FOREIGN KEY(author_id) REFERENCES authors(id) ON DELETE CASCADE
+);
+COMMENT ON TABLE authorslogins IS 'This table contains the logins of authors';

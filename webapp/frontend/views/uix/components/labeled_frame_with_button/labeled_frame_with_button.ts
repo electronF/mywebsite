@@ -1,4 +1,4 @@
-import GenerateCircularIconButton from "../circular_icon_button/circular_icon_button"
+import GenerateCircularIconButton from "../circular_icon_button/circular_icon_button.js"
 
 
 class GenerateLabeledFrameWithButton
@@ -20,7 +20,7 @@ class GenerateLabeledFrameWithButton
         return (`
         <div class="labeled-frame-with-button">
             <span>${this.#label}</span>
-            ${(new GenerateCircularIconButton('./../images/delete-icon.webp', this.#key, this.#alt, this.#title)).render()}
+            ${(new GenerateCircularIconButton('./../static/images/delete-icon.webp', this.#key, this.#alt, this.#title)).render()}
         </div>
         `)
     }

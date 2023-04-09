@@ -110,6 +110,16 @@ button:hover
     padding-right: 26px;
 }
 
+.flex-direction-row
+{
+    flex-direction: column;
+}
+
+.flex-direction-column
+{
+    flex-direction: row;
+}
+
 main
 {
     display: flex;
@@ -301,18 +311,45 @@ main
         }
     }
 
-    .article-reference
+    .content-section
     {
-        padding-right: 30px;
-        border-right: 1px solid #808080;
+        display: flex;
+        
 
-        padding-bottom: 250px;
-
-        input
+        .article-reference
         {
-            background-color: transparent;
+            padding-right: 30px;
+            border-right: 1px solid #808080;
+
+            padding-bottom: 250px;
+            min-width: 250px;
+
+            input
+            {
+                background-color: transparent;
+            }
+        }
+
+        .list-articles
+        {
+            padding-left: 20px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-content: start;
+
+            .article-frame
+            {
+                width: 450px;
+                height: fit-content;//418px; 
+                margin: 0 17px 34px 17px;
+
+                position: relative;
+            }
         }
     }
+    
 }
 
 

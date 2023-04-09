@@ -1,0 +1,41 @@
+<div class="article-frame">
+    <div class="article-frame-header">
+        <div class="article-authors">
+            <div class="article-authors-images">
+                {% for author in article.authors[:4] %}
+                    <img 
+                        src="{{static_url(author.miniature_path)}}" 
+                        alt="author image" 
+                        title="{{f'{article.authors[0].surname.split()[0]} {article.authors[0].name.split()[0]}'}}"
+                    />
+                {% end %}
+            </div>
+            <div class="article-authors-names">
+                <span>{{f"{article.authors[0].surname.split()[0]} {article.authors[0].name.split()[0]}"}}</span>
+                {% if len(article.authors) > 1%}
+                    <span class="authors-et-al">et al.</span>
+                {% end %}
+            </div>
+        </div>
+        <div class="articles-categories">
+            <ul>
+                {% for category in article.categories %}
+                    <li>{{category.name}}</li>
+                {% end %}
+            </ul>
+        </div>
+    </div>
+    <div class="article-frame-content">
+        <div class="article-image"><img src="{{static_url(article.image)}}" alt="{{article.title[:20]}}..." title="{{article.title}}"></div>
+        <div class="article-text-content">
+            <div class="article-title"><span>{{article.title}}</span></div>
+            <div class="article-description">{{article.description}}</div>
+        </div>
+    </div>
+    <div class="article-frame-footer">
+        <div class="article-actions"></div>
+        <div class="article-datetime">
+            <span>{{str(article.update_at)[:str(article.update_at).find('.')]}}</span>
+        </div>
+    </div>
+</div>

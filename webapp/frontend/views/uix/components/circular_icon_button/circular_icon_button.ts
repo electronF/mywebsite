@@ -14,10 +14,10 @@ class GenerateCircularIconButton
 
     render()
     {
-      return $(`\
+      return `\
         <button type="menu" class="circular-icon-button" key='${this.#key}'>
             <img src="${this.#icon}" alt="${this.#alt}" title="${this.#title}"/>
-        </button>`)   
+        </button>`  
     }
 }
 

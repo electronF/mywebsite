@@ -4,7 +4,7 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
 var _ArticleWriter_instances, _ArticleWriter_eventListenner, _ArticleWriterDispositionActionBar_instances, _ArticleWriterDispositionActionBar_removeActivateMarkerOnAllDispositionElements, _ArticleWriterDispositionActionBar_addActiveMarkerOnADispositionElement;
-import Article from "../../../types/article";
+import Article from "../../../types/article.js";
 class ArticleWriter {
     constructor() {
         _ArticleWriter_instances.add(this);

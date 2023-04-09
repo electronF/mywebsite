@@ -3,7 +3,7 @@ import tornado.web
 
 import frontend.constants.python.path as frontend_path
 
-from api.modelsDTO.authors import AuthorDTO
+from webapi.modelsDTO.authors import AuthorDTO
 
 
 class EditorialHeader(tornado.web.UIModule):

@@ -22,10 +22,10 @@ class GenerateCircularIconButton {
         __classPrivateFieldSet(this, _GenerateCircularIconButton_title, title, "f");
     }
     render() {
-        return $(`\
+        return `\
         <button type="menu" class="circular-icon-button" key='${__classPrivateFieldGet(this, _GenerateCircularIconButton_key, "f")}'>
             <img src="${__classPrivateFieldGet(this, _GenerateCircularIconButton_icon, "f")}" alt="${__classPrivateFieldGet(this, _GenerateCircularIconButton_alt, "f")}" title="${__classPrivateFieldGet(this, _GenerateCircularIconButton_title, "f")}"/>
-        </button>`);
+        </button>`;
     }
 }
 _GenerateCircularIconButton_icon = new WeakMap(), _GenerateCircularIconButton_alt = new WeakMap(), _GenerateCircularIconButton_title = new WeakMap(), _GenerateCircularIconButton_key = new WeakMap();

@@ -1,0 +1,8 @@
+DATABASE_API = "psycopg2" #pg8000, ''
+DATABASE_HOST = "127.0.0.1"
+DATABASE_NAME = "mywebsite"
+DATABASE_PASSWORD = "postgres"
+DATABASE_PORT =  "5432"
+DATABASE_USERNAME = "postgres" 
+
+# SQLALCHEMY_DATABASE_URI = "sqlite3:///{}".format(DATABASE_NAME)

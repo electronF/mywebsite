@@ -10,7 +10,7 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
 var _GenerateLabeledFrameWithButton_label, _GenerateLabeledFrameWithButton_key, _GenerateLabeledFrameWithButton_alt, _GenerateLabeledFrameWithButton_title;
-import GenerateCircularIconButton from "../circular_icon_button/circular_icon_button";
+import GenerateCircularIconButton from "../circular_icon_button/circular_icon_button.js";
 class GenerateLabeledFrameWithButton {
     constructor(label, key, alt, title) {
         _GenerateLabeledFrameWithButton_label.set(this, void 0);
@@ -26,7 +26,7 @@ class GenerateLabeledFrameWithButton {
         return (`
         <div class="labeled-frame-with-button">
             <span>${__classPrivateFieldGet(this, _GenerateLabeledFrameWithButton_label, "f")}</span>
-            ${(new GenerateCircularIconButton('./../images/delete-icon.webp', __classPrivateFieldGet(this, _GenerateLabeledFrameWithButton_key, "f"), __classPrivateFieldGet(this, _GenerateLabeledFrameWithButton_alt, "f"), __classPrivateFieldGet(this, _GenerateLabeledFrameWithButton_title, "f"))).render()}
+            ${(new GenerateCircularIconButton('./../static/images/delete-icon.webp', __classPrivateFieldGet(this, _GenerateLabeledFrameWithButton_key, "f"), __classPrivateFieldGet(this, _GenerateLabeledFrameWithButton_alt, "f"), __classPrivateFieldGet(this, _GenerateLabeledFrameWithButton_title, "f"))).render()}
         </div>
         `);
     }
