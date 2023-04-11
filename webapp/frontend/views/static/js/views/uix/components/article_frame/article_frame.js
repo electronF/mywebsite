@@ -54,5 +54,5 @@ class ArticleFrame {
       `;
     }
 }
-// _ArticleFrame_article = new WeakMap();
-// export default ArticleFrame;
+_ArticleFrame_article = new WeakMap();
+export default ArticleFrame;

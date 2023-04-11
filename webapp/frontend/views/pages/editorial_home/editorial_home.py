@@ -3,8 +3,6 @@ import datetime
 import tornado.ioloop
 import tornado.web
 
-import frontend.constants.python.path as frontend_path
-
 from webapi.modelsDTO.authors import AuthorDTO
 
 from webapi.models.article import Article

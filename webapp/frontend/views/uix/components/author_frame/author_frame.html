@@ -1,0 +1,25 @@
+<div class="author-frame">
+    <div class="profile-image">
+        <img src="{{static_url(profile_image_path)}}" alt="profile-image" title="{{full_name}}">
+    </div>
+    <div class="identity">
+        <span class="name"> {{full_name}}</span>
+        <span class="role"> {{role}} </span>
+    </div>
+    <div class="bio">
+        {{about}}
+    </div>
+    <div class="social-media">
+        <div class="profile">
+            <a href="{{profile_link}}">
+                <span>{{_('Profile')}}</span>
+                <img src="{{static_url('images/up-right-icon.webp')}}" alt="">
+            </a>
+        </div>
+        {% for social_media_detail in  social_media_buttons_details%}
+            <a href="{{social_media_detail['link']}}">
+                <img src="{{static_url(social_media_detail['icon_path'])}}" alt="{{social_media_detail['alt']}}" title="{{social_media_detail['title']}}"/>
+            </a>
+        {% end %}
+    </div>
+</div>

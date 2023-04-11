@@ -16,6 +16,10 @@ from frontend.views.uix.components import LabeledFrameWithButton
 from frontend.views.uix.components import LabeledFrameWithImage
 from frontend.views.uix.components import LabeledFrameWithImageAndButton
 from frontend.views.uix.components import ArticleFrame
+from frontend.views.uix.components import AudioPlayer
+from frontend.views.uix.components import AuthorFrame
+from frontend.views.uix.components import InlineAuthorFrame
+from frontend.views.uix.components import LessDescriptiveArticleFrame
 from frontend.views.uix.user import EditableDropDownButton
 from frontend.views.uix.user import DateTimePicker
 

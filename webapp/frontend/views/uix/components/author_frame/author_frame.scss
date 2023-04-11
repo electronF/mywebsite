@@ -1,0 +1,122 @@
+/* Colors */
+$primary_color: #606C38;
+$primary_color_dark: #283618;
+$primary_color_light: #FEFAE0;
+$secondary_color: #DDA15E;
+$secondary_color_dark: #BC6C25;
+$text_color_black: #000;
+$text_color_white: #FFF;
+$text_color_dark: #283618;
+$text_color_light: #F4FCEB;
+$input_color: #E5E5E5;
+
+.author-frame
+{
+    display: flex;
+    flex-direction: column;
+
+    >div
+    {
+        margin-bottom: 22px;
+    }
+
+    >div:last-child
+    {
+        margin-bottom: 0;
+    }
+
+    .profile-image
+    {
+        width: 120px;
+        height: 120px;
+
+        img
+        {
+            width: 100%;
+            border-radius: 77px;
+            margin: auto;
+        }
+    }
+
+    .identity
+    {
+        display: flex;
+        flex-direction: column;
+
+        .name
+        {
+            font-size: 20px;
+            font-weight: 600;
+            color: $primary_color_dark;
+            margin-bottom: 11px;
+        }
+
+        .role
+        {
+            font-size: 16px;
+            font-weight: 500;
+            color: #4E4E4E;
+        }
+    }
+
+    .bio
+    {
+        font-size: 16px;
+    }
+
+    .social-media
+    {
+        display: flex;
+        flex-direction: row;
+
+        .profile
+        {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            margin-right: 20px;
+
+            a
+            {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                padding: 5px 12px;
+                background-color: $primary_color;
+                text-decoration: none;
+                color: white;
+                border-radius: 8px;
+
+                span
+                {
+                    margin-right: 10px;
+                    font-weight: 400;
+                }
+
+                img
+                {
+                    margin: auto;
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+        }
+
+        a 
+        {
+            text-decoration: none;
+            margin-right: 20px;
+            // background-color: $primary_color;
+            img
+            {
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+        a:last-child
+        {
+            margin-right: 0;
+        }
+    }
+}

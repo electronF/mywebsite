@@ -1,0 +1,37 @@
+<div class="audio-player">
+    <div class="header">
+        <button class="image">
+            <img src="{{ static_url('images/compress-icon.webp') }}" alt="{{_('stick')}}" title="{{_('click here to stick the player')}}">
+        </button>
+    </div>
+    <div class="timer">
+        <div class="passed-time">0:53</div>
+        <div class="progress-bar">
+            <div>
+                <div class="progress-indicator"></div>
+                <div class="current-progress"></div>
+                <div class="duration-bar"></div>
+            </div>
+        </div>
+        <div class="duration">10:29</div>
+    </div>
+    <div class="actions-bar">
+        <button class="reading-voices">
+            <img src="{{ static_url('images/voice-recognition-icon.webp') }}" alt="{{_('Voices')}}" title="{{_('click here to change the reading voices')}}">
+        </button>
+        <div class="playing-buttons">
+            <button class="previous-button">
+                <img src="{{ static_url('images/previous-play-icon.webp') }}" alt="{{_('Previous')}}" title="{{_('click here to read the previous line')}}">
+            </button>
+            <button class="play-button">
+                <img src="{{ static_url('images/cicle-filled-play-icon-3.webp') }}" alt="{{_('Previous')}}" title="{{_('click here to start or stop reading')}}">
+            </button>
+            <button class="next-button">
+                <img src="{{ static_url('images/next-play-icon.webp') }}" alt="{{_('Next')}}" title="{{_('click here to read the next line')}}">
+            </button>
+        </div>
+        <button class="playing-speed">
+            1.0×
+        </button>
+    </div>
+</div>

@@ -8,6 +8,7 @@ from tornado_sqlalchemy import SQLAlchemy
 from frontend.views.pages import IndexHandler
 from frontend.views.pages import ArticleWriterHandler
 from frontend.views.pages import EditorialHomeHandler
+from frontend.views.pages import ArticleViewer
 
 import frontend.constants.python.path as frontend_path
 import settings
@@ -22,7 +23,9 @@ def make_app():
     return tornado.web.Application(
         [
             (r'.', IndexHandler),
+            (r'/article/*', ArticleViewer),
             (r'/editorial/*', EditorialHomeHandler),
+            (r'/editorial/article-viewer', ArticleViewer),
             (r'/editorial/home', EditorialHomeHandler),
             (r'/editorial/article', ArticleWriterHandler),
             (r"/images/profiles/(.*)", 

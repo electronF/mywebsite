@@ -1,7 +1,7 @@
-import Author from "../../../types/author.js"
-import ArticleCategory from "../../../types/category.js"
-import ArticleTag from "../../../types/tag.js"
-import GenerateLabeledFrameWithButton from "../../uix/components/labeled_frame_with_button/labeled_frame_with_button.js"
+import Author from "../../../types/author"
+import ArticleCategory from "../../../types/category"
+import ArticleTag from "../../../types/tag"
+import GenerateLabeledFrameWithButton from "../../uix/components/labeled_frame_with_button/labeled_frame_with_button"
 
 
 class EditorialHome
@@ -33,7 +33,7 @@ class EditorialHome
                     div.style.setProperty('display', 'none')
                 }
             }
-        })
+        });
 
         $('.suggested-options-list div').on('click', (event)=>{
             var input = (
@@ -49,7 +49,7 @@ class EditorialHome
                 input.value = event.currentTarget.textContent
                 event.currentTarget.parentElement.style.setProperty('display', 'none')
             }
-        })
+        });
 
         document.addEventListener('click', function(event:MouseEvent){
             var element = (event.target as HTMLElement) 
@@ -68,12 +68,12 @@ class EditorialHome
                 $('.suggested-options-list').css({"display":'none'})
             }
 
-            var btn = new GenerateLabeledFrameWithButton('Super', 'cool', '', 'CLick here')
-            $(btn.render()).appendTo(".list-articles");
+            // var btn = new GenerateLabeledFrameWithButton('Super', 'cool', '', 'CLick here')
+            // $(btn.render()).appendTo(".list-articles");
 
-            console.log('here', btn.render())
+            // console.log('here', btn.render())
             // $('.').append()
-        })
+        });
     }
 
     listen()
@@ -112,7 +112,8 @@ class EditorialHomeActionsBar
 }
 
 
-var editorialHomeActionsBar = new EditorialHomeActionsBar();
+var editorialHomeActionsBar = new EditorialHomeActionsBar()
+var editorialHome = (new EditorialHome())
 
 var editorialHomeFunctions = {
     'displayPublishedArticles': editorialHomeActionsBar.displayPublishedArticles,
@@ -120,10 +121,6 @@ var editorialHomeFunctions = {
     'displayArticlesInTrash': editorialHomeActionsBar.displayArticlesInTrash,
     'displayArticlesAsGrid': editorialHomeActionsBar.displayArticlesAsGrid,
     'displayArticlesAsList' : editorialHomeActionsBar.displayArticlesAsList
-};
+}
 
-
-
-
-(new EditorialHome()).listen()
-
+editorialHome.listen()

@@ -1,0 +1,22 @@
+<div class="less-descriptive-article-frame">
+    <div class="author-image">
+        <div>
+            <img src="{{static_url(author_image_path)}}" alt="">
+        </div>
+    </div>
+    <div class="content">
+        <div class="publication">
+            <div class="author-name">{{author_full_name}}</div>
+            <div class="in">{{_('in')}}</div>
+            <div class="categories">
+                {{ ("  ".join(categories[:2])+(" ..." if len(categories)>2 else " ")) }}
+            </div>
+        </div>
+        <div class="article-title">{{ _(article_title) }}</div>
+    </div>
+    <div class="article-image">
+        <div>
+            <img src="{{static_url(article_image_path)}}" alt="">
+        </div>
+    </div>
+</div>

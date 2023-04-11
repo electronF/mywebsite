@@ -6,3 +6,7 @@ from .labeled_frame_with_button.labeled_frame_with_button import LabeledFrameWit
 from .labeled_frame_with_image.labeled_frame_with_image import LabeledFrameWithImage
 from .labeled_frame_with_image_and_button.labeled_frame_with_image_and_button import LabeledFrameWithImageAndButton
 from .article_frame.article_frame import ArticleFrame
+from .inline_author_frame.inline_author_frame import InlineAuthorFrame
+from .audio_player.audio_player import AudioPlayer
+from .author_frame.author_frame import AuthorFrame
+from .less_descriptive_article_frame.less_descriptive_article_frame import LessDescriptiveArticleFrame

@@ -1,0 +1,73 @@
+/* Colors */
+$primary_color: #606C38;
+$primary_color_dark: #283618;
+$primary_color_light: #FEFAE0;
+$secondary_color: #DDA15E;
+$secondary_color_dark: #BC6C25;
+$text_color_black: #000;
+$text_color_white: #FFF;
+$text_color_dark: #283618;
+$text_color_light: #F4FCEB;
+$input_color: #E5E5E5;
+
+
+.inline-author-frame
+{
+    display: inline-flex;
+    background-color: #E9E9E9;
+    border-radius: 15px;
+    cursor: pointer;
+
+    .profile-image
+    {
+        border-radius: 15px;
+        border: 2px solid $primary_color;
+        width: 55px;
+        height: 55px;
+
+        img{
+            border-radius: 13px;
+            height: 100%;
+        }
+    }
+
+    .name-and-role
+    {
+        display: flex;
+        padding: 0 17px;
+        min-width: 120px;
+
+        align-content: center;
+
+        div
+        {
+            display: flex;
+            flex-direction: column;
+
+            width: fit-content;
+            height: fit-content;
+            align-self: center;
+            margin: auto;
+        }
+
+        .name
+        {
+            font-size: 16px;
+            font-weight: 500;
+            color: $primary_color_dark;
+            margin-bottom: 2px;
+        }
+
+        .role
+        {
+            font-size: 12px;
+            font-weight: 500;
+            color: rgba($color: $primary_color_dark, $alpha: .8);
+        }
+    }
+}
+
+.inline-author-frame:hover
+{
+    background-color: $primary_color_light;
+}

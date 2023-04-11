@@ -1,0 +1,136 @@
+/* Colors */
+$primary_color: #606C38;
+$primary_color_dark: #283618;
+$primary_color_light: #FEFAE0;
+$secondary_color: #DDA15E;
+$secondary_color_dark: #BC6C25;
+$text_color_black: #000;
+$text_color_white: #FFF;
+$text_color_dark: #283618;
+$text_color_light: #F4FCEB;
+$input_color: #E5E5E5;
+
+.audio-player
+{
+    display: flex;
+    flex-direction: column;
+    
+    .header
+    {
+        display: flex;
+        flex-direction: row-reverse;
+
+        button
+        {
+            background-color: transparent;
+            width: 32px;
+            height: 32px;
+            border: none;
+            background-color: transparent;
+
+            img
+            {
+                width: 100%;
+                margin: auto;
+            }
+        }
+    }
+
+    .timer
+    {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        padding: 10px 0;
+        
+        >div
+        {
+            align-self: center;
+        }
+
+        .progress-bar
+        {
+            margin: 0 24px;
+            width: 100%;
+            height: 22px;
+
+            >div
+            {
+                margin: auto;
+                width: 100%;
+                // height: fit-content;
+                position: relative;
+
+                .progress-indicator
+                {
+                    width: 22px;
+                    height: 22px;
+                    border-radius: 15px;
+                    background-color: $primary_color;
+                    position: absolute;
+                    z-index: 2;
+                    left: 30px;
+                    top: -9px;
+                    // position: relative;
+                }
+
+                .current-progress
+                {
+                    position: absolute;
+                    z-index: 1;
+                    width: 20%;
+                    height: 4px;
+                    background-color: $primary_color;
+                }
+
+                .duration-bar
+                {
+                    position: relative;
+                    z-index: 0;
+                    width: 100%;
+                    height: 4px;
+                    background-color: #D3D3D3;
+                }
+
+            }
+
+            
+        }
+    }
+
+    .actions-bar
+    {
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+
+        button
+        {
+            width: 34px;
+            height: 34px;
+
+            align-self: center;
+            background-color: transparent;
+            border: none;
+
+            img
+            {
+                width: 100%;
+                margin: auto;
+            }
+        }
+
+        .playing-buttons
+        {
+            margin: 0 32px;
+
+            .play-button
+            {
+                width: 54px;
+                height: 54px;
+                margin: 0 16px;
+            }
+        }
+    }
+
+}

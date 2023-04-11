@@ -9,8 +9,8 @@ from webapi.models.category import Category
 
 class ArticleFrame(tornado.web.UIModule):
     
-    def javascript_files(self):
-        return [os.path.join("js", "views", "uix", "components", "article_frame", "article_frame.js")]
+    # def javascript_files(self):
+    #     return [os.path.join("js", "views", "uix", "components", "article_frame", "article_frame.js")]
 
     def css_files(self):
         return [os.path.join("css", "article_frame.css")]

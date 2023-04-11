@@ -1,4 +1,3 @@
-// import GenerateLabeledFrameWithButton from "./views/uix/components/labeled_frame_with_button/labeled_frame_with_button.js";
 class EditorialHome {
     constructor() {
         this.searchValue = '';
@@ -43,10 +42,10 @@ class EditorialHome {
             if (!condition) {
                 $('.suggested-options-list').css({ "display": 'none' });
             }
-            // var btn = new GenerateLabeledFrameWithButton('Super', 'cool', '', 'CLick here');
+            // var btn = new GenerateLabeledFrameWithButton('Super', 'cool', '', 'CLick here')
             // $(btn.render()).appendTo(".list-articles");
-            // console.log('here', btn.render());
-            // // $('.').append()
+            // console.log('here', btn.render())
+            // $('.').append()
         });
     }
     listen() {
@@ -70,15 +69,13 @@ class EditorialHomeActionsBar {
         console.log('display articles as list');
     }
 }
-let editorialHomeActionsBar = new EditorialHomeActionsBar();
-let editorialHomeFunctions = {
+var editorialHomeActionsBar = new EditorialHomeActionsBar();
+var editorialHome = (new EditorialHome());
+var editorialHomeFunctions = {
     'displayPublishedArticles': editorialHomeActionsBar.displayPublishedArticles,
     'displayArticlesInDraft': editorialHomeActionsBar.displayArticlesInTrash,
     'displayArticlesInTrash': editorialHomeActionsBar.displayArticlesInTrash,
     'displayArticlesAsGrid': editorialHomeActionsBar.displayArticlesAsGrid,
     'displayArticlesAsList': editorialHomeActionsBar.displayArticlesAsList
 };
-(new EditorialHome()).listen();
-
-
-console.log('here cool', editorialHomeFunctions)
+editorialHome.listen();

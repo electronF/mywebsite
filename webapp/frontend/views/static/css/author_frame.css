@@ -1,0 +1,63 @@
+/* Colors */
+.author-frame {
+  display: flex;
+  flex-direction: column; }
+  .author-frame > div {
+    margin-bottom: 22px; }
+  .author-frame > div:last-child {
+    margin-bottom: 0; }
+  .author-frame .profile-image {
+    width: 120px;
+    height: 120px; }
+    .author-frame .profile-image img {
+      width: 100%;
+      border-radius: 77px;
+      margin: auto; }
+  .author-frame .identity {
+    display: flex;
+    flex-direction: column; }
+    .author-frame .identity .name {
+      font-size: 20px;
+      font-weight: 600;
+      color: #283618;
+      margin-bottom: 11px; }
+    .author-frame .identity .role {
+      font-size: 16px;
+      font-weight: 500;
+      color: #4E4E4E; }
+  .author-frame .bio {
+    font-size: 16px; }
+  .author-frame .social-media {
+    display: flex;
+    flex-direction: row; }
+    .author-frame .social-media .profile {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      margin-right: 20px; }
+      .author-frame .social-media .profile a {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        padding: 5px 12px;
+        background-color: #606C38;
+        text-decoration: none;
+        color: white;
+        border-radius: 8px; }
+        .author-frame .social-media .profile a span {
+          margin-right: 10px;
+          font-weight: 400; }
+        .author-frame .social-media .profile a img {
+          margin: auto;
+          width: 18px;
+          height: 18px; }
+    .author-frame .social-media a {
+      text-decoration: none;
+      margin-right: 20px; }
+      .author-frame .social-media a img {
+        width: 32px;
+        height: 32px; }
+    .author-frame .social-media a:last-child {
+      margin-right: 0; }
+
+/*# sourceMappingURL=author_frame.css.map */

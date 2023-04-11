@@ -1,0 +1,37 @@
+/* Colors */
+.inline-author-frame {
+  display: inline-flex;
+  background-color: #E9E9E9;
+  border-radius: 15px;
+  cursor: pointer; }
+  .inline-author-frame .profile-image {
+    border-radius: 15px;
+    border: 2px solid #606C38;
+    width: 55px;
+    height: 55px; }
+    .inline-author-frame .profile-image img {
+      border-radius: 13px;
+      height: 100%; }
+  .inline-author-frame .name-and-role {
+    display: flex;
+    padding: 0 17px;
+    min-width: 120px;
+    align-content: center; }
+    .inline-author-frame .name-and-role div {
+      display: flex;
+      flex-direction: column;
+      width: fit-content;
+      height: fit-content;
+      align-self: center;
+      margin: auto; }
+    .inline-author-frame .name-and-role .name {
+      font-size: 16px;
+      font-weight: 500;
+      color: #283618;
+      margin-bottom: 2px; }
+    .inline-author-frame .name-and-role .role {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(40, 54, 24, 0.8); }
+
+/*# sourceMappingURL=inline_author_frame.css.map */

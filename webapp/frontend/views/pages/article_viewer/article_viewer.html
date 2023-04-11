@@ -10,8 +10,105 @@
         <script src="{{static_url('lib/jquery/jquery-min.js')}}"></script>
     </head>
     <body>
-        <h1>Hello world!</h1>
+        {% module EditorialHeader(author=current_author)%}
+        <main>
+            <div class="author-actions-bar">
+                {% module IconButton(
+                    icon_path=author_actions_bar_button_details['back']['icon_path'], 
+                    key="author-actions-bar-back-btn",
+                    on_click=author_actions_bar_button_details['back']['on_click'],
+                    title=author_actions_bar_button_details['back']['title'],
+                    alt=author_actions_bar_button_details['back']['alt']
+                    ) 
+                %}
+                <button type="button" class="rounded-button margin-left-auto bg-transparent fg-primary-color-dark border-1px border-solid border-secondary-color" onclick="{{ author_actions_bar_button_details['edit']['on_click']}}"> {{  _(author_actions_bar_button_details['edit']["name"]) }}</button>
+                <button type="button" class="rounded-button bg-secondary-color fg-primary-color-dark" onclick="{{ author_actions_bar_button_details['delete']['on_click']}}"> {{  _(author_actions_bar_button_details['delete']["name"]) }}</button>
+            </div>
+            <div class="article-categories">
+                <div class="found-in-category-icon">
+                    <img src="{{static_url(dark_searh_icon_path)}}" alt="in" title="{{_('Published in')}}">
+                </div>
+                <span>{{ _("Published in") }}</span>
+                {% for category in categories %}
+                    <span class="simple-text-category">{{category}}</span>
+                {% end %}
+            </div>
+            <div class="article">
+                <div class="main-information">
+                    <div class="authors-and-description">
+                        <div class="authors">
+                            <div class="label">{{_("Authors")}}</div>
+                            <div class="list-authors">
+                                {% module InlineAuthorFrame(key='inline-author-frame-1', profile_image_path='images/avatar-image-male-2.webp', full_name='Ovide KUICHUA', role='Data scientist', profile_link='') %}
+                                {% module InlineAuthorFrame(key='inline-author-frame-1', profile_image_path='images/avatar-image-kids-3.webp', full_name='Lindsey', role='Derangeuse', profile_link='') %}
+                                {% module InlineAuthorFrame(key='inline-author-frame-1', profile_image_path='images/avatar-image-female-3.webp', full_name='Venus', role='Web Developper', profile_link='') %}
+                                {% module InlineAuthorFrame(key='inline-author-frame-1', profile_image_path='images/avatar-image-female-2.webp', full_name='Hawawou Oumarou', role='Software Developper', profile_link='') %}
+                            </div>
+                        </div>
+                        <div class="description">
+                            <div>{{_('Tuesday, 13 Feb 2023 at 13:24')}}</div>
+                            <div>
+                                <span>·</span>
+                                {{_('  10min read  ')}}
+                                <span>·</span>
+                            </div>
+                            <div class="player">
+                                <button class="play-pause-icon" type="button" onclick="{{player['buttons']['play_button']['on_click']}}">
+                                    <img 
+                                        src="{{ static_url(player['buttons']['play_button']['icon1_path']) }}"
+                                        icon="{{ static_url(player['buttons']['play_button']['icon2_path']) }}"
+                                        alt="{{player['buttons']['play_button']['alt']}}"
+                                        title="{{player['buttons']['play_button']['title']}}" 
+                                    />
+                                </button>
+                                <span>{{player['duration']}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div></div>
+                    </div>
+                    <div class="list-tags">
+
+                    </div>
+                </div>
+                <div class="others-information">
+                   {% module AudioPlayer(key='audio-player') %}
+                    <div class="authors">
+                        {% module AuthorFrame(key='author-frame-1', profile_link='', profile_image_path='images/avatar-image-male-2.webp', full_name='Ovide KUICHUA', role='Data scientist', about='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis iure eius repudiandae corrupti accusantium impedit nihil cum, rem ipsum autem deleniti illo ullam dignissimos officia, suscipit amet quis obcaecati aliquam!', social_media_buttons_details=[]) %}
+                        {% module AuthorFrame(key='author-frame-2', profile_link='', profile_image_path='images/avatar-image-kids-3.webp', full_name='Lindsey', role='Derangeuse', about='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis iure eius repudiandae corrupti accusantium impedit nihil cum, rem ipsum autem deleniti illo ullam dignissimos officia, suscipit amet quis obcaecati aliquam!', social_media_buttons_details=[]) %}
+                        {% module AuthorFrame(key='author-frame-3', profile_link='', profile_image_path='images/avatar-image-female-3.webp', full_name='Venus', role='Web Developper', about='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis iure eius repudiandae corrupti accusantium impedit nihil cum, rem ipsum autem deleniti illo ullam dignissimos officia, suscipit amet quis obcaecati aliquam!', social_media_buttons_details=[]) %}
+                        {% module AuthorFrame(key='author-frame-3', profile_link='', profile_image_path='images/avatar-image-female-2.webp', full_name='Hawawou Oumarou', role='Software Developper', about='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis iure eius repudiandae corrupti accusantium impedit nihil cum, rem ipsum autem deleniti illo ullam dignissimos officia, suscipit amet quis obcaecati aliquam!', social_media_buttons_details=[]) %}
+                        
+                        <button type="button" title="{{_('Click here to see more')}}"> 
+                            <span> {{_("View more")}} </span>
+                            <img src="{{static_url('images/dropdown-icon.webp')}}" alt=""> 
+                        </button>
+                    </div>
+                    <div class="suggestions">
+                        <div class="label">{{_('Suggestions')}}</div>
+                        <div class="list-suggestions">
+                            {% module LessDescriptiveArticleFrame(key='less-descriptive-article-frame-1', author_full_name='Venus', author_image_path='images/avatar-image-female-3.webp', article_title='Customize your backend with Jango and Flask', article_image_path='', categories=['Web development']) %}
+                            {% module LessDescriptiveArticleFrame(key='less-descriptive-article-frame-1', author_full_name='Venus', author_image_path='images/avatar-image-female-3.webp', article_title='Customize your backend with Jango and Flask', article_image_path='', categories=['Web development']) %}
+                            {% module LessDescriptiveArticleFrame(key='less-descriptive-article-frame-1', author_full_name='Venus', author_image_path='images/avatar-image-female-3.webp', article_title='Customize your backend with Jango and Flask', article_image_path='', categories=['Web development']) %}
+                            
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+            <div class="tags">
+                <div class="label">{{_("Tags")}}</div>
+                <div class="list-tags">
+                    {% for index, tag in enumerate(article_tags)%}
+                        {% module LabeledFrame(label = tag, key= f'label-frame-tag-{index}', alt = tag, title = tag) %}
+                    {% end %}
+                </div>
+            </div>
+        </main>
+        {% module EditorialFooter() %}
     </body>
-    <script src="{{static_url('js/article_viewer.js')}}" type="module"></script>
+    <script src="{{static_url('js/article_viewer.js')}}"></script>
     <script src="{{static_url('lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 </html>

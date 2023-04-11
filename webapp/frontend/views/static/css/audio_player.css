@@ -1,0 +1,73 @@
+/* Colors */
+.audio-player {
+  display: flex;
+  flex-direction: column; }
+  .audio-player .header {
+    display: flex;
+    flex-direction: row-reverse; }
+    .audio-player .header button {
+      background-color: transparent;
+      width: 32px;
+      height: 32px;
+      border: none;
+      background-color: transparent; }
+      .audio-player .header button img {
+        width: 100%;
+        margin: auto; }
+  .audio-player .timer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 10px 0; }
+    .audio-player .timer > div {
+      align-self: center; }
+    .audio-player .timer .progress-bar {
+      margin: 0 24px;
+      width: 100%;
+      height: 22px; }
+      .audio-player .timer .progress-bar > div {
+        margin: auto;
+        width: 100%;
+        position: relative; }
+        .audio-player .timer .progress-bar > div .progress-indicator {
+          width: 22px;
+          height: 22px;
+          border-radius: 15px;
+          background-color: #606C38;
+          position: absolute;
+          z-index: 2;
+          left: 30px;
+          top: -9px; }
+        .audio-player .timer .progress-bar > div .current-progress {
+          position: absolute;
+          z-index: 1;
+          width: 20%;
+          height: 4px;
+          background-color: #606C38; }
+        .audio-player .timer .progress-bar > div .duration-bar {
+          position: relative;
+          z-index: 0;
+          width: 100%;
+          height: 4px;
+          background-color: #D3D3D3; }
+  .audio-player .actions-bar {
+    display: flex;
+    flex-direction: row;
+    margin: auto; }
+    .audio-player .actions-bar button {
+      width: 34px;
+      height: 34px;
+      align-self: center;
+      background-color: transparent;
+      border: none; }
+      .audio-player .actions-bar button img {
+        width: 100%;
+        margin: auto; }
+    .audio-player .actions-bar .playing-buttons {
+      margin: 0 32px; }
+      .audio-player .actions-bar .playing-buttons .play-button {
+        width: 54px;
+        height: 54px;
+        margin: 0 16px; }
+
+/*# sourceMappingURL=audio_player.css.map */
