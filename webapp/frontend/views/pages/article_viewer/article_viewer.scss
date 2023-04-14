@@ -252,6 +252,7 @@ main
         flex-direction: row;
         flex-wrap: nowrap;
         flex-grow: 1;
+        margin-bottom: 28px;
 
         .main-information
         {
@@ -352,6 +353,60 @@ main
             .content
             {
                 color: #4E4E4E;
+                flex-grow: 1;
+                font-family: 'Source Serif Pro';
+                margin: 40px 0 50px 18px;
+
+                .title
+                {
+                    font-size: 36px;
+                    font-weight: 700;
+                    color: $primary_color_dark;
+                    margin: 23px 0 23px 0;
+                }
+
+                .authors
+                {
+                    font-size: 20px;
+                    font-weight: 400;
+                    color: #000;
+                }
+
+                .body
+                {
+                    margin-top: 50px;
+                    color: #000;
+                }
+            }
+
+            .tags
+            {
+                display: flex;
+                flex-direction: column;
+
+                .label
+                {
+                    font-size: 18px;
+                    font-weight: 500;
+                    color: $primary_color_dark;
+
+                    margin-bottom: 15px;
+                }
+
+                .list-tags
+                {
+                    display: inline-flex;
+
+                    .labeled-frame
+                    {
+                        margin-right: 16px;
+                    }
+
+                    .labeled-frame:last-child
+                    {
+                        margin-right: 0;
+                    }
+                }
             }
         }
 
@@ -435,38 +490,6 @@ main
                         margin-bottom: 0;
                     }
                 }
-            }
-            
-        }
-    }
-
-    .tags
-    {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 28px;
-
-        .label
-        {
-            font-size: 18px;
-            font-weight: 500;
-            color: $primary_color_dark;
-
-            margin-bottom: 15px;
-        }
-
-        .list-tags
-        {
-            display: inline-flex;
-
-            .labeled-frame
-            {
-                margin-right: 16px;
-            }
-
-            .labeled-frame:last-child
-            {
-                margin-right: 0;
             }
         }
     }

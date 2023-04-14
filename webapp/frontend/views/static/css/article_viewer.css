@@ -142,7 +142,8 @@ main {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    flex-grow: 1; }
+    flex-grow: 1;
+    margin-bottom: 28px; }
     main .article .main-information {
       display: flex;
       flex-direction: column;
@@ -197,7 +198,36 @@ main {
               margin: auto;
               margin-left: 5px; }
       main .article .main-information .content {
-        color: #4E4E4E; }
+        color: #4E4E4E;
+        flex-grow: 1;
+        font-family: 'Source Serif Pro';
+        margin: 40px 0 50px 18px; }
+        main .article .main-information .content .title {
+          font-size: 36px;
+          font-weight: 700;
+          color: #283618;
+          margin: 23px 0 23px 0; }
+        main .article .main-information .content .authors {
+          font-size: 20px;
+          font-weight: 400;
+          color: #000; }
+        main .article .main-information .content .body {
+          margin-top: 50px;
+          color: #000; }
+      main .article .main-information .tags {
+        display: flex;
+        flex-direction: column; }
+        main .article .main-information .tags .label {
+          font-size: 18px;
+          font-weight: 500;
+          color: #283618;
+          margin-bottom: 15px; }
+        main .article .main-information .tags .list-tags {
+          display: inline-flex; }
+          main .article .main-information .tags .list-tags .labeled-frame {
+            margin-right: 16px; }
+          main .article .main-information .tags .list-tags .labeled-frame:last-child {
+            margin-right: 0; }
     main .article .others-information {
       display: flex;
       flex-direction: column;
@@ -244,21 +274,6 @@ main {
             margin-bottom: 15px; }
           main .article .others-information .suggestions .list-suggestions .less-descriptive-article-frame:last-child {
             margin-bottom: 0; }
-  main .tags {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 28px; }
-    main .tags .label {
-      font-size: 18px;
-      font-weight: 500;
-      color: #283618;
-      margin-bottom: 15px; }
-    main .tags .list-tags {
-      display: inline-flex; }
-      main .tags .list-tags .labeled-frame {
-        margin-right: 16px; }
-      main .tags .list-tags .labeled-frame:last-child {
-        margin-right: 0; }
 
 .simple-text-category {
   color: #000;

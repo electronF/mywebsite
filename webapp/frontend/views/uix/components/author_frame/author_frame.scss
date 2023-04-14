@@ -69,6 +69,35 @@ $input_color: #E5E5E5;
         display: flex;
         flex-direction: row;
 
+        a 
+        {
+            text-decoration: none;
+            margin-right: 20px;
+            box-sizing: border-box;
+            display: flex;
+            border-radius: 2px;
+            
+            // background-color: $primary_color;
+            img
+            {
+                align-self: center;
+                margin: auto;
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+        a:hover 
+        {
+            border: 2px solid $primary_color;
+
+            img
+            {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
         .profile
         {
             display: flex;
@@ -86,6 +115,8 @@ $input_color: #E5E5E5;
                 text-decoration: none;
                 color: white;
                 border-radius: 8px;
+                box-sizing: border-box;
+                border: none;
 
                 span
                 {
@@ -100,17 +131,10 @@ $input_color: #E5E5E5;
                     height: 18px;
                 }
             }
-        }
 
-        a 
-        {
-            text-decoration: none;
-            margin-right: 20px;
-            // background-color: $primary_color;
-            img
+            a:hover
             {
-                width: 32px;
-                height: 32px;
+                background-color: $secondary_color;
             }
         }
 

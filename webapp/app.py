@@ -40,6 +40,11 @@ def make_app():
                 tornado.web.StaticFileHandler, 
                 {'path': os.path.join(".", "data", "users", "images", "covers")}
             ),
+
+            (r"/sounds/(.*)", 
+                tornado.web.StaticFileHandler, 
+                {'path': os.path.join("sounds")}
+            ),
         ],
         **(settings.SETTINGS))
 

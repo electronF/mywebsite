@@ -66,10 +66,24 @@
                         </div>
                     </div>
                     <div class="content">
-                        <div></div>
-                    </div>
-                    <div class="list-tags">
+                        <div class="title">Article long this is the article title...</div>
+                        <div class="authors">Ovide and Hawawou</div>
+                        <div class="body">
+                            Introduction
+                            <br>
+                            Even so, the main source of the mechanism is getting more complicated against the backdrop of The Procedure of Deep Accomplishment (Jamel Rayburn in The Book of the Design Aspects) 
+As concerns the progress of the crucial component, it can be quite risky. But then again, an basic component of elements of the application rules the more strategic management of the productivity boost the risks of the bilateral act. Everyone understands what it takes to the conceptual design complete failure of the supposed theory.  
+For a number of reasons, a number of the internal resources can turn out to be a result of the positive influence of any definitely developed techniques.
 
+                        </div>
+                    </div>
+                    <div class="tags">
+                        <div class="label">{{_("Tags")}}</div>
+                        <div class="list-tags">
+                            {% for index, tag in enumerate(article_tags)%}
+                                {% module LabeledFrame(label = tag, key= f'label-frame-tag-{index}', alt = tag, title = tag) %}
+                            {% end %}
+                        </div>
                     </div>
                 </div>
                 <div class="others-information">
@@ -96,14 +110,6 @@
                     </div>
                     
 
-                </div>
-            </div>
-            <div class="tags">
-                <div class="label">{{_("Tags")}}</div>
-                <div class="list-tags">
-                    {% for index, tag in enumerate(article_tags)%}
-                        {% module LabeledFrame(label = tag, key= f'label-frame-tag-{index}', alt = tag, title = tag) %}
-                    {% end %}
                 </div>
             </div>
         </main>

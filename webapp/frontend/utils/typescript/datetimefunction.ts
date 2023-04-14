@@ -25,4 +25,12 @@ class DateTimeFormater
         dateTimeString +=  `at ${dateTime.getUTCHours()}:${dateTime.getUTCMinutes}:${dateTime.getUTCSeconds()}`
         return dateTimeString
     }
+
+    static secondToDuration(duration:number)
+    {
+        var hours = Math.ceil(duration/3600)
+        var minutes = Math.ceil((duration - hours*3600)/60)
+        var seconds = duration - (hours*60 + minutes)*60
+        return (hours>0)?`${hours}:`:'' + `${minutes}`+(seconds<10)?'0':'' + `${seconds}` 
+    }
 }

@@ -1,36 +1,37 @@
 <div class="audio-player">
     <div class="header">
-        <button class="image">
-            <img src="{{ static_url('images/compress-icon.webp') }}" alt="{{_('stick')}}" title="{{_('click here to stick the player')}}">
+        <button class="image" onclick="{{position_on_click}}">
+            <img src="{{ static_url('images/enlarge-icon.webp') }}" icon1="{{ static_url('images/compress-icon.webp') }}" icon2="{{ static_url('images/enlarge-icon.webp') }}" alt="{{_('stick')}}" title="{{_('click here to stick the player')}}">
         </button>
     </div>
     <div class="timer">
-        <div class="passed-time">0:53</div>
+        <div class="passed-time">0:00</div>
         <div class="progress-bar">
             <div>
-                <div class="progress-indicator"></div>
+                <!-- <div class="progress-indicator"></div>
                 <div class="current-progress"></div>
-                <div class="duration-bar"></div>
+                <div class="duration-bar"></div> -->
+                <input type="range" min="0" value="0" max="100" class="progress-indicator"/>
             </div>
         </div>
-        <div class="duration">10:29</div>
+        <div class="duration">{{reading_duration}}</div>
     </div>
     <div class="actions-bar">
-        <button class="reading-voices">
+        <button class="reading-voices" onclick="{{voice_on_click}}">
             <img src="{{ static_url('images/voice-recognition-icon.webp') }}" alt="{{_('Voices')}}" title="{{_('click here to change the reading voices')}}">
         </button>
         <div class="playing-buttons">
-            <button class="previous-button">
+            <button class="previous-button" onclick="{{previous_on_click}}">
                 <img src="{{ static_url('images/previous-play-icon.webp') }}" alt="{{_('Previous')}}" title="{{_('click here to read the previous line')}}">
             </button>
-            <button class="play-button">
-                <img src="{{ static_url('images/cicle-filled-play-icon-3.webp') }}" alt="{{_('Previous')}}" title="{{_('click here to start or stop reading')}}">
+            <button class="play-button" onclick="{{play_pause_on_click}}">
+                <img src="{{ static_url('images/cicle-filled-play-icon-1.webp') }}" alt="{{_('Play')}}" title="{{_('click here to start or stop reading')}}">
             </button>
-            <button class="next-button">
+            <button class="next-button" onclick="{{next_on_click}}">
                 <img src="{{ static_url('images/next-play-icon.webp') }}" alt="{{_('Next')}}" title="{{_('click here to read the next line')}}">
             </button>
         </div>
-        <button class="playing-speed">
+        <button class="playing-speed" value="1.0" onclick="{{speed_on_click}}">
             1.0×
         </button>
     </div>

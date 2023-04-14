@@ -30,6 +30,22 @@
   .author-frame .social-media {
     display: flex;
     flex-direction: row; }
+    .author-frame .social-media a {
+      text-decoration: none;
+      margin-right: 20px;
+      box-sizing: border-box;
+      display: flex;
+      border-radius: 2px; }
+      .author-frame .social-media a img {
+        align-self: center;
+        margin: auto;
+        width: 32px;
+        height: 32px; }
+    .author-frame .social-media a:hover {
+      border: 2px solid #606C38; }
+      .author-frame .social-media a:hover img {
+        width: 28px;
+        height: 28px; }
     .author-frame .social-media .profile {
       display: flex;
       flex-direction: row;
@@ -43,7 +59,9 @@
         background-color: #606C38;
         text-decoration: none;
         color: white;
-        border-radius: 8px; }
+        border-radius: 8px;
+        box-sizing: border-box;
+        border: none; }
         .author-frame .social-media .profile a span {
           margin-right: 10px;
           font-weight: 400; }
@@ -51,12 +69,8 @@
           margin: auto;
           width: 18px;
           height: 18px; }
-    .author-frame .social-media a {
-      text-decoration: none;
-      margin-right: 20px; }
-      .author-frame .social-media a img {
-        width: 32px;
-        height: 32px; }
+      .author-frame .social-media .profile a:hover {
+        background-color: #DDA15E; }
     .author-frame .social-media a:last-child {
       margin-right: 0; }
 
