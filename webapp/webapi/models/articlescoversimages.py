@@ -4,7 +4,8 @@ from sqlalchemy import (
     Boolean,
     Column, 
     String,
-    ForeignKey
+    ForeignKey,
+    
 )
 
 from sqlalchemy.orm import (
@@ -30,9 +31,9 @@ class ArticlesCoversImages(db.Model):
             self.id, self.article_id, self.import_path, self.is_used)
 
 
-class CategorySchema(ma.SQLAlchemySchema):
+class ArticlesCoversSchema(ma.SQLAlchemySchema):
     class Meta:
-        model = Category
+        model = ArticlesCovers
         load_instance = True #Optional: deserialize to model instance
     
     id = auto_field()

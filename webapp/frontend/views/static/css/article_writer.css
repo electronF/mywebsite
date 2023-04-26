@@ -74,7 +74,9 @@ input:focus, select, textarea:focus {
 main {
   display: flex;
   flex-direction: column;
-  margin: 40px 26px; }
+  margin: 40px 26px;
+  flex-grow: 1;
+  min-height: 80vh; }
   main > section {
     margin-bottom: 30px; }
   main .actions-bar {

@@ -9,31 +9,60 @@ class ArticleViewer {
         _ArticleViewer_instances.add(this);
     }
     listen() {
-        __classPrivateFieldGet(this, _ArticleViewer_instances, "m", _ArticleViewer_eventListenner);
+        __classPrivateFieldGet(this, _ArticleViewer_instances, "m", _ArticleViewer_eventListenner).call(this);
     }
 }
 _ArticleViewer_instances = new WeakSet(), _ArticleViewer_eventListenner = function _ArticleViewer_eventListenner() {
+    $('.others-information .authors button').on('click', (event) => {
+        var spans = event.currentTarget.getElementsByTagName('span');
+        var images = event.currentTarget.getElementsByTagName('img');
+        if (event.currentTarget.previousElementSibling.getAttribute('data-show-less') === "true") {
+            event.currentTarget.previousElementSibling.setAttribute('data-show-less', 'false');
+            $(event.currentTarget.previousElementSibling).css('height', '100%');
+            if (spans.length > 0)
+                spans[0].textContent = "View less";
+            if (images.length > 0)
+                images[0].style.setProperty('rotate', '180deg');
+        }
+        else {
+            event.currentTarget.previousElementSibling.setAttribute('data-show-less', 'true');
+            $(event.currentTarget.previousElementSibling).css('height', '800px');
+            if (spans.length > 0)
+                spans[0].textContent = "View more";
+            if (images.length > 0)
+                images[0].style.setProperty('rotate', '0deg');
+        }
+    });
 };
 class ArticleViewerActions {
-    readDocument(element) {
-        var images = element.getElementsByTagName('img');
-        if (images.length > 0) {
-            var src = images[0].getAttribute('src');
-            var icon = images[0].getAttribute('icon');
-            images[0].setAttribute('src', icon);
-            images[0].setAttribute('icon', src);
-            //call function to start or stop reading
-            if (this.isReading) {
-                //stop reading
+    constructor() {
+        this.readDocument = (element) => {
+            var images = element.getElementsByTagName('img');
+            var span = element.nextElementSibling;
+            if (this.isReading == true) {
+                if (images.length > 0)
+                    images[0].src = "/static/images/cicle-filled-play-icon-2.webp";
+                this.isReading = false;
+                location.href = '/editorial/';
             }
             else {
-                //start reading
+                if (images.length > 0)
+                    images[0].src = "/static/images/cicle-filled-pause-icon-3.webp";
+                this.isReading = true;
             }
-        }
+        };
+        this.openEditorPage = (element) => {
+            location.href = '/editorial/writer';
+        };
+        this.goToPreviousPage = (element) => {
+            location.href = '/editorial/';
+        };
     }
 }
 var articleViewerActions = new ArticleViewerActions();
 var articlesViewerFunctions = {
-    "readDocument": articleViewerActions.readDocument
+    "readDocument": articleViewerActions.readDocument,
+    "previous": articleViewerActions.goToPreviousPage,
+    "openEditor": articleViewerActions.openEditorPage
 };
 let a = (new ArticleViewer()).listen();

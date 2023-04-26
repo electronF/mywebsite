@@ -12,7 +12,7 @@ class ArticleReference
     #eventListenner()
     {
         $('.author-search-bar input').on('keyup', (event)=>{
-            var input = event.currentTarget as HTMLInputElement
+            var input = event?.currentTarget as HTMLInputElement
             var displayList = false;
             if(input.value.trim().length > 0)
             {
@@ -21,10 +21,10 @@ class ArticleReference
 
             var divs = (   
                 event
-                .currentTarget
-                .parentElement
-                .parentElement
-                .getElementsByClassName('suggested-authors-list') as HTMLCollectionOf<HTMLElement>
+                ?.currentTarget
+                ?.parentElement
+                ?.parentElement
+                ?.getElementsByClassName('suggested-authors-list') as HTMLCollectionOf<HTMLElement>
             )
 
             if(divs.length > 0)
@@ -36,7 +36,7 @@ class ArticleReference
 
 
         $('.suggested-authors-list div').on('click', function(event){
-            var div = (event.currentTarget as HTMLDivElement)
+            var div = (event?.currentTarget as HTMLDivElement)
             console.log('value: ', div.textContent)
 
             if($(div.parentElement).css('display').trim().toLowerCase() != 'none')
@@ -50,10 +50,10 @@ class ArticleReference
             
             var divs = (   
                 event
-                .currentTarget
-                .parentElement
-                .parentElement
-                .getElementsByClassName('suggested-authors-list') as HTMLCollectionOf<HTMLElement>
+                ?.currentTarget
+                ?.parentElement
+                ?.parentElement
+                ?.getElementsByClassName('suggested-authors-list') as HTMLCollectionOf<HTMLElement>
             )
 
             if(divs.length > 0)
@@ -73,19 +73,19 @@ class ArticleReference
 
 
         document.addEventListener('click', function(event:MouseEvent){
-            var element = (event.target as HTMLElement) 
+            var element = (event?.target as HTMLElement) 
             
             var condition = (
-                element.tagName.trim().toLocaleLowerCase() === 'input' 
-                && element.parentElement.classList.contains("author-search-bar"))
+                element?.tagName.trim().toLocaleLowerCase() === 'input' 
+                && element?.parentElement.classList.contains("author-search-bar"))
                 
             if(!condition)
             {
                 var divs = (   
                     element
-                    .parentElement
-                    .parentElement
-                    .getElementsByClassName('suggested-authors-list') as HTMLCollectionOf<HTMLElement>
+                    ?.parentElement
+                    ?.parentElement
+                    ?.getElementsByClassName('suggested-authors-list') as HTMLCollectionOf<HTMLElement>
                 )
             
                 if(divs.length > 0)

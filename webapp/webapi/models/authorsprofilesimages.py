@@ -33,9 +33,9 @@ class AuthorsProfilesImages(db.Model):
             self.id, self.author_id, self.import_path, self.import_path, self.type, self.is_used)
 
 
-class CategorySchema(ma.SQLAlchemySchema):
+class AuthorsProfilesImagesSchema(ma.SQLAlchemySchema):
     class Meta:
-        model = Category
+        model = AuthorsProfilesImages
         load_instance = True #Optional: deserialize to model instance
     id = auto_field()
     author_id = auto_field()

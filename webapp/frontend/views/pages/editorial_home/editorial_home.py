@@ -109,32 +109,6 @@ Frankly speaking, the problem of after the completion of the linguistic approach
                     profile_image= "",
                     miniature = os.path.join("images", "avatar-image.webp")
                 ),
-                AuthorDTO(
-                    name = "Author name 1",
-                    surname = "Author surname 1",
-                    profile_image= "",
-                    miniature = os.path.join("images", "avatar-image-kids-1.webp")
-                )
-            ],
-
-            list_categories = [
-                # LabeledFrameWithButton(
-                #     label=label, 
-                #     key=f"label-frame-with-button-category-{label}",
-                #     all="",
-                #     title="Click here to delete this category"
-                # ) 
-                # for label in ["Data science", 'machine learning', 'Python']
-            ],
-
-            list_tags = [
-                # LabeledFrameWithButton(
-                #     label=label, 
-                #     key=f"label-frame-with-button-tags-{label}",
-                #     alt="",
-                #     title="Click here to delete this tag" 
-                # ) 
-                # for label in ['programming', 'coding' ,'data science']
             ],
             list_articles = [
                 Article(

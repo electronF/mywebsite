@@ -17,6 +17,8 @@ from ..configs import db, ma
 
 from .category import Category
 from .author import Author
+from .articlescategories import ArticlesCategories
+from .articlesauthors import ArticlesAuthors
 
 
 class Article(db.Model):
@@ -55,9 +57,22 @@ class Article(db.Model):
                     nullable = True 
                 )
     
+    # articles_categories = relationship(
+    #     'ArticlesCategories',
+    #     primaryjoin="Article.id==ArticlesCategories.article_id",
+    #     foreign_keys=id,
+    #     back_populates=backref("articlescategories")
+    # )
+
+    # article_authors = relationship(
+    #     'ArticlesAuthors',
+    #     primaryjoin="Article.id==ArticlesAuthors.article_id",
+    #     foreign_keys=id,
+    #     back_populates=backref("articlesauthors")
+    # )
     
     # categories = relationship(
-    #     "Category", 
+    #     Category, 
     #     backref=backref("articles"),
     #     # cascade="all, delete, delete-orphan",
     #     # single_parent=True,
@@ -65,7 +80,7 @@ class Article(db.Model):
     # )
 
     # authors = relationship(
-    #     "Author", 
+    #     Author, 
     #     backref=backref("authors"),
     #     # cascade="all, delete, delete-orphan",
     #     # single_parent=True,
@@ -99,6 +114,7 @@ class ArticleSchema(ma.SQLAlchemySchema):
     create_at = auto_field()
     publish_at = auto_field()
     update_at = auto_field()
+    # articlescategories = auto_field()
     # categories = auto_field()
     # authors = auto_field()
  

@@ -14,11 +14,12 @@ class ArticleEditor(tornado.web.UIModule):
     # def embedded_javascript(self):
     #     return f"console.log(1+{self.data});"
 
-    def render(self):
+    def render(self, key:str, content:str=''):
         
         return self.render_string(
             "article_editor.html", 
             title="Article editor",
+            content = content,
             buttons_of_style_details = [
                 {"icon_path": os.path.join("images", "bold-icon.webp")},
                 {"icon_path": os.path.join("images", "italic-icon.webp")},

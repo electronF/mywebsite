@@ -5,6 +5,7 @@
         <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{{title}}</title>
+        <link rel="shortcut icon" href="{{static_url('images/favicon.ico')}}" type="image/x-icon">
         <link href="{{static_url('lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
         <link rel="stylesheet" href="{{static_url('css/editorial_home.css')}}">
         <link rel="stylesheet" href="{{static_url('css/labeled_frame_with_button.css')}}">
@@ -62,9 +63,9 @@
                 {% module ArticleReference(
                         key='article-reference-1', 
                         display_new_article_button = True,
-                        list_authors = list_authors,
-                        list_categories = list_categories, 
-                        list_tags = list_tags,
+                        list_authors = [],
+                        list_categories = [], 
+                        list_tags = [],
                         display_datetime_picker = True
                     ) 
                 %}

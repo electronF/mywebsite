@@ -3,6 +3,10 @@ import connexion
 from tornado_sqlalchemy import SQLAlchemy
 from flask_marshmallow  import Marshmallow
 
+from sqlalchemy.orm import (
+    scoped_session, sessionmaker
+)
+
 from .constants import (
     DATABASE_API, 
     DATABASE_HOST, 
@@ -40,7 +44,10 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 # Create the SqlAlchemy db instance
 db = SQLAlchemy(app)
 
+# db.engine
+# session = scoped_session(sessionmaker(bind=db.engine))
+
+
 # Initialize Marshmallow
 ma = Marshmallow(app)
 
-print(db, ma)

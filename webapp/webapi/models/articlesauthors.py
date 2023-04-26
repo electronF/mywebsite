@@ -15,10 +15,11 @@ from marshmallow_sqlalchemy import auto_field
 from ..configs import db, ma
 
 
-class AuthorsArticles(db.Model):
-    __bind_key__ = "authorsarticles"
-    __tablename__ = "authorsarticles"
+class ArticlesAuthors(db.Model):
+    __bind_key__ = "articlesauthors"
+    __tablename__ = "articlesauthors"
 
+    id = Column(String, primary_key=True)
     author_id = Column(String, ForeignKey("authors.id"))
     article_id = Column(String, ForeignKey("articles.id"))
     
@@ -28,11 +29,12 @@ class AuthorsArticles(db.Model):
             self.author_id, self.article_id)
 
 
-class CategorySchema(ma.SQLAlchemySchema):
+class ArticlesAuthorsSchema(ma.SQLAlchemySchema):
     class Meta:
-        model = Category
+        model = ArticlesAuthors
         load_instance = True #Optional: deserialize to model instance
     
+    # id = auto_field()
     author_id = auto_field()
     article_id = auto_field()
     

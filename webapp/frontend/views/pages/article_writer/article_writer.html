@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{{title}}</title>
+        <link rel="shortcut icon" href="{{static_url('images/favicon.ico')}}" type="image/x-icon">
         <link href="{{static_url('lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
         <link rel="stylesheet" href="{{static_url('css/article_writer.css')}}">
         <script src="{{static_url('lib/jquery/jquery-min.js')}}"></script>
@@ -31,14 +32,16 @@
                         <span>{{_("Name")}}</span>
                         <span class="character-counter" >0/{{title_maxlength}}</span>
                     </div>
-                    <input type="text" placeholder="{{title_placeholder}}" maxlength={{title_maxlength}} required/>
+                    <input type="text" placeholder="{{title_placeholder}}" value="{{article.title}}" maxlength={{title_maxlength}} required/>
                 </div>
                 <div class="article-short-description">
                     <div>
                         <span>{{_("Short description")}}</span>
                         <span class="character-counter">0/{{description_maxlength}}</span>
                     </div>
-                    <textarea placeholder="{{description_placeholder}}" maxlength={{description_maxlength}} required></textarea>
+                    <textarea placeholder="{{description_placeholder}}" maxlength={{description_maxlength}} required>
+                        {{article.description}}
+                    </textarea>
                 </div>
             </section>
             <section class="editor-disposition">
@@ -77,20 +80,21 @@
             <section class="article-content-section">
                 {% module ArticleReference(
                         key='article-reference-1', 
-                        list_authors = list_authors,
-                        list_categories = list_categories, 
-                        list_tags = list_tags
+                        list_authors = article.authors,
+                        list_categories = article.categories, 
+                        list_tags = article.tags.split('&&&')
                     ) 
                 %}
                 <section class="article-content">
-                    {% module  ArticleEditor() %}
-                    {% module  ArticleRenderer() %}
+                    {% module  ArticleEditor(key='article-editor-key', content=article.content) %}
+                    {% module  ArticleRenderer(key='article-renderer-key', content=article.content) %}
                 </section>
             </section>
         </main>
         {% module EditorialFooter() %}
     </body>
-    <script src="{{static_url('js/article_writer.js')}}"></script>
-
+    <script src="{{static_url('js/article_writer.js')}}">
+    </script>
     <script src="{{static_url('lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script></script>
 </html>

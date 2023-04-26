@@ -19,6 +19,7 @@ class ArticlesCategories(db.Model):
     __bind_key__ = "articlescategories"
     __tablename__ = "articlescategories"
 
+    id = Column(String, primary_key=True)
     article_id = Column(String, ForeignKey("articles.id"))
     category_id = Column(String, ForeignKey("categories.id"))
     
@@ -28,9 +29,10 @@ class ArticlesCategories(db.Model):
             self.article_id, self.category_id)
 
 
-class CategorySchema(ma.SQLAlchemySchema):
+
+class ArticlesCategoriesSchema(ma.SQLAlchemySchema):
     class Meta:
-        model = Category
+        model = ArticlesCategories
         load_instance = True #Optional: deserialize to model instance
     
     article_id = auto_field()

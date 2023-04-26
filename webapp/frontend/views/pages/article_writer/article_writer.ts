@@ -1,8 +1,8 @@
-import Article from "../../../types/article.js";
+// import Article from "../../../types/article.js";
 
 class ArticleWriter
 {
-    article: Article = new Article()
+    // article: Article = new Article()
     
     #eventListenner(){
         // $(".actions-bar div.labeled-icon-button").on('click', function (event) {
@@ -84,38 +84,38 @@ class ArticleWriterDispositionActionBar
 
     #addActiveMarkerOnADispositionElement(element:HTMLElement)
     {
-        if(element!.tagName.toLowerCase() === "img")
+        if(element?.tagName.toLowerCase() === "img")
         {
-            element = element!.parentElement
+            element = element?.parentElement
         }
 
-        if(element!.classList.contains("unactive-disposition-icon-button"))
+        if(element?.classList.contains("unactive-disposition-icon-button"))
         {
-            element!.classList.remove("unactive-disposition-icon-button")
+            element?.classList.remove("unactive-disposition-icon-button")
         }
 
-        element!.classList.add("active-disposition-icon-button")
+        element?.classList.add("active-disposition-icon-button")
     }
 
     showArticleReference(event)
     {
-        var element = (event.originalTarget.nextElementSibling as HTMLElement)
-        if(element.classList.contains("bg-secondary-color"))
+        var element = (event?.originalTarget?.nextElementSibling as HTMLElement)
+        if(element?.classList.contains("bg-secondary-color"))
         {
             element.classList.remove("bg-secondary-color")
         }
-        (event.originalTarget as HTMLElement).classList.add("bg-secondary-color")
+        (event?.originalTarget as HTMLElement).classList.add("bg-secondary-color")
         $(".article-reference").css({"display":"flex"})
     }
 
     hideArticleReference(event)
     {
-        var element = (event.originalTarget.previousElementSibling as HTMLElement)
-        if(element.classList.contains("bg-secondary-color"))
+        var element = (event?.originalTarget?.previousElementSibling as HTMLElement)
+        if(element?.classList.contains("bg-secondary-color"))
         {
-            element.classList.remove("bg-secondary-color")
+            element?.classList.remove("bg-secondary-color")
         }
-        (event.originalTarget as HTMLElement).classList.add("bg-secondary-color")
+        (event?.originalTarget as HTMLElement).classList.add("bg-secondary-color")
         $(".article-reference").css({"display":"none"})
     }
 
@@ -128,7 +128,7 @@ class ArticleWriterDispositionActionBar
         $('.article-content').css({"flex-direction": "column"})
 
         this.#removeActivateMarkerOnAllDispositionElements()
-        this.#addActiveMarkerOnADispositionElement(event.originalTarget)
+        this.#addActiveMarkerOnADispositionElement(event?.originalTarget)
     }
 
     editorInBottom = (event) =>
@@ -138,7 +138,7 @@ class ArticleWriterDispositionActionBar
         $('.article-content').css({"flex-direction": "column-reverse"})
 
         this.#removeActivateMarkerOnAllDispositionElements()
-        this.#addActiveMarkerOnADispositionElement(event.originalTarget)
+        this.#addActiveMarkerOnADispositionElement(event?.originalTarget)
     }
 
     editorInLeft = (event) =>
@@ -148,7 +148,7 @@ class ArticleWriterDispositionActionBar
         $('.article-content').css({"flex-direction": "row"})
 
         this.#removeActivateMarkerOnAllDispositionElements()
-        this.#addActiveMarkerOnADispositionElement(event.originalTarget)
+        this.#addActiveMarkerOnADispositionElement(event?.originalTarget)
     }
 
     editorInRight = (event) =>
@@ -158,7 +158,7 @@ class ArticleWriterDispositionActionBar
         $('.article-content').css({"flex-direction": "row-reverse"})
 
         this.#removeActivateMarkerOnAllDispositionElements()
-        this.#addActiveMarkerOnADispositionElement(event.originalTarget)
+        this.#addActiveMarkerOnADispositionElement(event?.originalTarget)
     }
 
     editorOnly = (event) =>
@@ -168,7 +168,7 @@ class ArticleWriterDispositionActionBar
         $('.article-content').css({"flex-direction": "row"})
 
         this.#removeActivateMarkerOnAllDispositionElements()
-        this.#addActiveMarkerOnADispositionElement(event.originalTarget)
+        this.#addActiveMarkerOnADispositionElement(event?.originalTarget)
     }
 
     editorHide = (event) =>
@@ -178,7 +178,7 @@ class ArticleWriterDispositionActionBar
         $('.article-content').css({"flex-direction": "row"})
 
         this.#removeActivateMarkerOnAllDispositionElements()
-        this.#addActiveMarkerOnADispositionElement(event.originalTarget)
+        this.#addActiveMarkerOnADispositionElement(event?.originalTarget)
     }
 }
 
@@ -216,7 +216,6 @@ class ArticleWriterActionsBar
 // a context can exist. Also a mapping object is better because it help to escape overwriting
 // a variale if this one is use to save function link
 
-
 var articleWriterActionsBar = new ArticleWriterActionsBar()
 var articleWriterDispositionActionBar = new ArticleWriterDispositionActionBar()
 
@@ -236,4 +235,5 @@ var articleWriterFunctions = {
     'rendererOnly': articleWriterDispositionActionBar.editorHide
 }
 
+var bar = (new ArticleWriter()).listen()
 $($(".editor-disposition .icon-button")[4]).trigger('click')

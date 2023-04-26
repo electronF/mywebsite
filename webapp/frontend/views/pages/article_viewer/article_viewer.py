@@ -8,7 +8,9 @@ from webapi.models.article import Article
 
 
 class ArticleViewer(tornado.web.RequestHandler):
+
     def get(self, author_:AuthorDTO = None):
+        
         self.render(
             "article_viewer.html", 
             title="Aticle Viewer",
@@ -25,7 +27,7 @@ class ArticleViewer(tornado.web.RequestHandler):
                     "play_button":
                     {
                         "icon1_path": os.path.join('images','cicle-filled-play-icon-2.webp'),
-                        "icon2_path": os.path.join('images','cicle-filled-play-icon-3.webp'),
+                        "icon2_path": os.path.join('images','cicle-filled-pause-icon-3.webp'),
                         "title": "Click here to start or stop reading",
                         "alt": "play-pause",
                         "on_click": "articlesViewerFunctions.readDocument(this);"
@@ -63,14 +65,14 @@ class ArticleViewer(tornado.web.RequestHandler):
             author_actions_bar_button_details = {
                 'back': {
                     "name": "",
-                    "on_click":"",
+                    "on_click":"articlesViewerFunctions.previous(this);",
                     "icon_path":os.path.join("images", "left-arrow-icon.webp"),
                     "title": "Click here to back to editorial page",
                     "alt":"back"
                 },
                 'edit': {
                     "name": "Edit",
-                    "on_click":"",
+                    "on_click":"articlesViewerFunctions.openEditor(this)",
                     "icon_path":"",
                     "title": "Click here to edit the article",
                     "alt":""

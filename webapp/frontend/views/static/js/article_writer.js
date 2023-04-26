@@ -1,3 +1,4 @@
+// import Article from "../../../types/article.js";
 var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (receiver, state, kind, f) {
     if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
@@ -6,6 +7,7 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
 var _ArticleWriter_instances, _ArticleWriter_eventListenner, _ArticleWriterDispositionActionBar_instances, _ArticleWriterDispositionActionBar_removeActivateMarkerOnAllDispositionElements, _ArticleWriterDispositionActionBar_addActiveMarkerOnADispositionElement;
 class ArticleWriter {
     constructor() {
+        // article: Article = new Article()
         _ArticleWriter_instances.add(this);
     }
     listen() {
@@ -74,58 +76,58 @@ class ArticleWriterDispositionActionBar {
             $('.article-renderer').css({ "display": "flex" });
             $('.article-content').css({ "flex-direction": "column" });
             __classPrivateFieldGet(this, _ArticleWriterDispositionActionBar_instances, "m", _ArticleWriterDispositionActionBar_removeActivateMarkerOnAllDispositionElements).call(this);
-            __classPrivateFieldGet(this, _ArticleWriterDispositionActionBar_instances, "m", _ArticleWriterDispositionActionBar_addActiveMarkerOnADispositionElement).call(this, event.originalTarget);
+            __classPrivateFieldGet(this, _ArticleWriterDispositionActionBar_instances, "m", _ArticleWriterDispositionActionBar_addActiveMarkerOnADispositionElement).call(this, event?.originalTarget);
         };
         this.editorInBottom = (event) => {
             $('.article-editor').css({ "display": "flex" });
             $('.article-renderer').css({ "display": "flex" });
             $('.article-content').css({ "flex-direction": "column-reverse" });
             __classPrivateFieldGet(this, _ArticleWriterDispositionActionBar_instances, "m", _ArticleWriterDispositionActionBar_removeActivateMarkerOnAllDispositionElements).call(this);
-            __classPrivateFieldGet(this, _ArticleWriterDispositionActionBar_instances, "m", _ArticleWriterDispositionActionBar_addActiveMarkerOnADispositionElement).call(this, event.originalTarget);
+            __classPrivateFieldGet(this, _ArticleWriterDispositionActionBar_instances, "m", _ArticleWriterDispositionActionBar_addActiveMarkerOnADispositionElement).call(this, event?.originalTarget);
         };
         this.editorInLeft = (event) => {
             $('.article-editor').css({ "display": "flex" });
             $('.article-renderer').css({ "display": "flex" });
             $('.article-content').css({ "flex-direction": "row" });
             __classPrivateFieldGet(this, _ArticleWriterDispositionActionBar_instances, "m", _ArticleWriterDispositionActionBar_removeActivateMarkerOnAllDispositionElements).call(this);
-            __classPrivateFieldGet(this, _ArticleWriterDispositionActionBar_instances, "m", _ArticleWriterDispositionActionBar_addActiveMarkerOnADispositionElement).call(this, event.originalTarget);
+            __classPrivateFieldGet(this, _ArticleWriterDispositionActionBar_instances, "m", _ArticleWriterDispositionActionBar_addActiveMarkerOnADispositionElement).call(this, event?.originalTarget);
         };
         this.editorInRight = (event) => {
             $('.article-editor').css({ "display": "flex" });
             $('.article-renderer').css({ "display": "flex" });
             $('.article-content').css({ "flex-direction": "row-reverse" });
             __classPrivateFieldGet(this, _ArticleWriterDispositionActionBar_instances, "m", _ArticleWriterDispositionActionBar_removeActivateMarkerOnAllDispositionElements).call(this);
-            __classPrivateFieldGet(this, _ArticleWriterDispositionActionBar_instances, "m", _ArticleWriterDispositionActionBar_addActiveMarkerOnADispositionElement).call(this, event.originalTarget);
+            __classPrivateFieldGet(this, _ArticleWriterDispositionActionBar_instances, "m", _ArticleWriterDispositionActionBar_addActiveMarkerOnADispositionElement).call(this, event?.originalTarget);
         };
         this.editorOnly = (event) => {
             $('.article-editor').css({ "display": "flex" });
             $('.article-renderer').css({ "display": "none" });
             $('.article-content').css({ "flex-direction": "row" });
             __classPrivateFieldGet(this, _ArticleWriterDispositionActionBar_instances, "m", _ArticleWriterDispositionActionBar_removeActivateMarkerOnAllDispositionElements).call(this);
-            __classPrivateFieldGet(this, _ArticleWriterDispositionActionBar_instances, "m", _ArticleWriterDispositionActionBar_addActiveMarkerOnADispositionElement).call(this, event.originalTarget);
+            __classPrivateFieldGet(this, _ArticleWriterDispositionActionBar_instances, "m", _ArticleWriterDispositionActionBar_addActiveMarkerOnADispositionElement).call(this, event?.originalTarget);
         };
         this.editorHide = (event) => {
             $('.article-editor').css({ "display": "none" });
             $('.article-renderer').css({ "display": "flex" });
             $('.article-content').css({ "flex-direction": "row" });
             __classPrivateFieldGet(this, _ArticleWriterDispositionActionBar_instances, "m", _ArticleWriterDispositionActionBar_removeActivateMarkerOnAllDispositionElements).call(this);
-            __classPrivateFieldGet(this, _ArticleWriterDispositionActionBar_instances, "m", _ArticleWriterDispositionActionBar_addActiveMarkerOnADispositionElement).call(this, event.originalTarget);
+            __classPrivateFieldGet(this, _ArticleWriterDispositionActionBar_instances, "m", _ArticleWriterDispositionActionBar_addActiveMarkerOnADispositionElement).call(this, event?.originalTarget);
         };
     }
     showArticleReference(event) {
-        var element = event.originalTarget.nextElementSibling;
-        if (element.classList.contains("bg-secondary-color")) {
+        var element = event?.originalTarget?.nextElementSibling;
+        if (element?.classList.contains("bg-secondary-color")) {
             element.classList.remove("bg-secondary-color");
         }
-        event.originalTarget.classList.add("bg-secondary-color");
+        event?.originalTarget.classList.add("bg-secondary-color");
         $(".article-reference").css({ "display": "flex" });
     }
     hideArticleReference(event) {
-        var element = event.originalTarget.previousElementSibling;
-        if (element.classList.contains("bg-secondary-color")) {
-            element.classList.remove("bg-secondary-color");
+        var element = event?.originalTarget?.previousElementSibling;
+        if (element?.classList.contains("bg-secondary-color")) {
+            element?.classList.remove("bg-secondary-color");
         }
-        event.originalTarget.classList.add("bg-secondary-color");
+        event?.originalTarget.classList.add("bg-secondary-color");
         $(".article-reference").css({ "display": "none" });
     }
 }
@@ -137,13 +139,13 @@ _ArticleWriterDispositionActionBar_instances = new WeakSet(), _ArticleWriterDisp
         }
     }
 }, _ArticleWriterDispositionActionBar_addActiveMarkerOnADispositionElement = function _ArticleWriterDispositionActionBar_addActiveMarkerOnADispositionElement(element) {
-    if (element.tagName.toLowerCase() === "img") {
-        element = element.parentElement;
+    if (element?.tagName.toLowerCase() === "img") {
+        element = element?.parentElement;
     }
-    if (element.classList.contains("unactive-disposition-icon-button")) {
-        element.classList.remove("unactive-disposition-icon-button");
+    if (element?.classList.contains("unactive-disposition-icon-button")) {
+        element?.classList.remove("unactive-disposition-icon-button");
     }
-    element.classList.add("active-disposition-icon-button");
+    element?.classList.add("active-disposition-icon-button");
 };
 class ArticleWriterActionsBar {
     new() {
@@ -182,4 +184,5 @@ var articleWriterFunctions = {
     'editorOnly': articleWriterDispositionActionBar.editorOnly,
     'rendererOnly': articleWriterDispositionActionBar.editorHide
 };
+var bar = (new ArticleWriter()).listen();
 $($(".editor-disposition .icon-button")[4]).trigger('click');

@@ -25,9 +25,9 @@ def make_app():
             (r'.', IndexHandler),
             (r'/article/*', ArticleViewer),
             (r'/editorial/*', EditorialHomeHandler),
-            (r'/editorial/article-viewer', ArticleViewer),
+            (r'/editorial/viewer/*', ArticleViewer),
             (r'/editorial/home', EditorialHomeHandler),
-            (r'/editorial/article', ArticleWriterHandler),
+            (r'/editorial/writer/*', ArticleWriterHandler),
             (r"/images/profiles/(.*)", 
                 tornado.web.StaticFileHandler, 
                 {'path': os.path.join(".", "data", "users", "images", "profiles")}
@@ -45,6 +45,7 @@ def make_app():
                 tornado.web.StaticFileHandler, 
                 {'path': os.path.join("sounds")}
             ),
+            (r'/favicon.ico', tornado.web.StaticFileHandler, {'path': os.path.join(settings.SETTINGS["static_path"])})
         ],
         **(settings.SETTINGS))
 

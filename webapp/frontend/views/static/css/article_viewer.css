@@ -238,7 +238,15 @@ main {
       main .article .others-information .authors {
         display: flex;
         flex-direction: column;
-        margin-bottom: 74px; }
+        margin-bottom: 74px;
+        overflow-y: hidden; }
+        main .article .others-information .authors .list {
+          display: flex;
+          flex-direction: column;
+          overflow-y: hidden; }
+        @media screen and (min-width: 800px) {
+          main .article .others-information .authors .list {
+            height: 800px; } }
         main .article .others-information .authors .author-frame {
           margin-bottom: 30px; }
         main .article .others-information .authors button {
@@ -271,7 +279,7 @@ main {
           display: flex;
           flex-direction: column; }
           main .article .others-information .suggestions .list-suggestions .less-descriptive-article-frame {
-            margin-bottom: 15px; }
+            margin-bottom: 25px; }
           main .article .others-information .suggestions .list-suggestions .less-descriptive-article-frame:last-child {
             margin-bottom: 0; }
 

@@ -428,6 +428,24 @@ main
                 display: flex;
                 flex-direction: column;
                 margin-bottom: 74px;
+                overflow-y: hidden;
+                
+                .list
+                {
+                    display: flex;
+                    flex-direction: column;
+                    overflow-y: hidden;
+                    
+
+                }
+
+
+                @media screen and (min-width: 800px) {
+                    .list
+                    {
+                        height: 800px; 
+                    }
+                }
 
                 .author-frame
                 {
@@ -482,7 +500,7 @@ main
 
                     .less-descriptive-article-frame
                     {
-                        margin-bottom: 15px;
+                        margin-bottom: 25px;
                     }
 
                     .less-descriptive-article-frame:last-child

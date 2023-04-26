@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{{title}}</title>
+        <link rel="shortcut icon" href="{{static_url('images/favicon.ico')}}" type="image/x-icon">
         <link href="{{static_url('lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
         <link rel="stylesheet" href="{{static_url('css/article_viewer.css')}}">
         <script src="{{static_url('lib/jquery/jquery-min.js')}}"></script>
@@ -89,11 +90,12 @@ For a number of reasons, a number of the internal resources can turn out to be a
                 <div class="others-information">
                    {% module AudioPlayer(key='audio-player') %}
                     <div class="authors">
-                        {% module AuthorFrame(key='author-frame-1', profile_link='', profile_image_path='images/avatar-image-male-2.webp', full_name='Ovide KUICHUA', role='Data scientist', about='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis iure eius repudiandae corrupti accusantium impedit nihil cum, rem ipsum autem deleniti illo ullam dignissimos officia, suscipit amet quis obcaecati aliquam!', social_media_buttons_details=[]) %}
-                        {% module AuthorFrame(key='author-frame-2', profile_link='', profile_image_path='images/avatar-image-kids-3.webp', full_name='Lindsey', role='Derangeuse', about='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis iure eius repudiandae corrupti accusantium impedit nihil cum, rem ipsum autem deleniti illo ullam dignissimos officia, suscipit amet quis obcaecati aliquam!', social_media_buttons_details=[]) %}
-                        {% module AuthorFrame(key='author-frame-3', profile_link='', profile_image_path='images/avatar-image-female-3.webp', full_name='Venus', role='Web Developper', about='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis iure eius repudiandae corrupti accusantium impedit nihil cum, rem ipsum autem deleniti illo ullam dignissimos officia, suscipit amet quis obcaecati aliquam!', social_media_buttons_details=[]) %}
-                        {% module AuthorFrame(key='author-frame-3', profile_link='', profile_image_path='images/avatar-image-female-2.webp', full_name='Hawawou Oumarou', role='Software Developper', about='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis iure eius repudiandae corrupti accusantium impedit nihil cum, rem ipsum autem deleniti illo ullam dignissimos officia, suscipit amet quis obcaecati aliquam!', social_media_buttons_details=[]) %}
-                        
+                        <div class="list" data-show-less="true">
+                            {% module AuthorFrame(key='author-frame-1', profile_link='', profile_image_path='images/avatar-image-male-2.webp', full_name='Ovide KUICHUA', role='Data scientist', about='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis iure eius repudiandae corrupti accusantium impedit nihil cum, rem ipsum autem deleniti illo ullam dignissimos officia, suscipit amet quis obcaecati aliquam!', social_media_buttons_details=[]) %}
+                            {% module AuthorFrame(key='author-frame-2', profile_link='', profile_image_path='images/avatar-image-kids-3.webp', full_name='Lindsey', role='Derangeuse', about='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis iure eius repudiandae corrupti accusantium impedit nihil cum, rem ipsum autem deleniti illo ullam dignissimos officia, suscipit amet quis obcaecati aliquam!', social_media_buttons_details=[]) %}
+                            {% module AuthorFrame(key='author-frame-3', profile_link='', profile_image_path='images/avatar-image-female-3.webp', full_name='Venus', role='Web Developper', about='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis iure eius repudiandae corrupti accusantium impedit nihil cum, rem ipsum autem deleniti illo ullam dignissimos officia, suscipit amet quis obcaecati aliquam!', social_media_buttons_details=[]) %}
+                            {% module AuthorFrame(key='author-frame-3', profile_link='', profile_image_path='images/avatar-image-female-2.webp', full_name='Hawawou Oumarou', role='Software Developper', about='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis iure eius repudiandae corrupti accusantium impedit nihil cum, rem ipsum autem deleniti illo ullam dignissimos officia, suscipit amet quis obcaecati aliquam!', social_media_buttons_details=[]) %}
+                        </div>
                         <button type="button" title="{{_('Click here to see more')}}"> 
                             <span> {{_("View more")}} </span>
                             <img src="{{static_url('images/dropdown-icon.webp')}}" alt=""> 
